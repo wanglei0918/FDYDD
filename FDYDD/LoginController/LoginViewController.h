@@ -22,14 +22,19 @@
 @property(strong,nonatomic)UITextField *idcodeText;
 @property(strong,nonatomic)UIImageView *userImageV;
 @property(strong,nonatomic)UIImageView *idcodeImageV;
-@property(strong,nonatomic)UIImageView *ImageView1;
-@property(strong,nonatomic)UIImageView *ImageView2;
+@property(strong,nonatomic)UIImageView *phoneImageView;
+@property(strong,nonatomic)UIImageView *lockerImageView;
 //注册页面的logoUIImageView
-@property(strong,nonatomic)UIImageView *ImageView3;
+@property(strong,nonatomic)UIImageView *logoImageView;
 //用户协议ImageView
 @property(strong,nonatomic)UIImageView *ImageViewdelegate;
 @property(strong,nonatomic)UILabel *label1;
 @property(strong,nonatomic)UILabel *label2;
 @property(strong,nonatomic)UILabel *label3;
+
+
+
+
+
 
 @end

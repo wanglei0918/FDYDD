@@ -21,8 +21,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     NSLog(@"000");
-    
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(rightButton)];
     [self.navigationItem.rightBarButtonItem setTitle:@"登录"];
     
@@ -31,12 +29,8 @@
 
 -(void)rightButton
 {
-    
     LoginViewController *loginVC = [[LoginViewController alloc] init];
-    
     [self.navigationController pushViewController:loginVC animated:YES];
-    
-    
 }
 
 

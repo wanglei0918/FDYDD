@@ -29,29 +29,6 @@
 
 #define iPHone4oriPHone4s ([UIScreen mainScreen].bounds.size.height == 480) ? YES : NO
 
-
-
-#define MYWIDTH  [[UIScreen mainScreen] bounds].size.width
-#define MYHEIGHT  [[UIScreen mainScreen] bounds].size.height
-
-
-#define IPHONE6W 375      //此处看适配机型
-#define IPHONE6H 667
-
-
-#define WIDTH  MYWIDTH / 375
-#define HEIGHT MYHEIGHT / 667
-
-
-/**
- *  RGB颜色简化(不设置透明度)
- */
-#define RGBCOLOR(r,g,b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
-/**
- *  RGB颜色简化(设置透明度)
- */
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
-
 /**
  *  屏幕宽
  */
@@ -65,6 +42,24 @@
 /**
  *  适配iphone6和6+ 宽度或高度补偿
  */
+
+#define IPHONE6W 375      //此处看适配机型
+#define IPHONE6H 667
+
+
+#define WIDTH  SCREEN_WIDTH / 375
+#define HEIGHT SCREEN_HEIGHT / 667
+
+
+/**
+ *  RGB颜色简化(不设置透明度)
+ */
+#define RGBCOLOR(r,g,b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+/**
+ *  RGB颜色简化(设置透明度)
+ */
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
 #define FIXWIDTHORHEIGHT(widthorheight) (SCREEN_WIDTH > 320 ?  widthorheight * SCREEN_WIDTH/320.0 : widthorheight)
 
 

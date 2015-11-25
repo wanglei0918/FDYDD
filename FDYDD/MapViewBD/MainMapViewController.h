@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI_Map/BMKMapView.h>
+#import <BaiduMapAPI_Map/BMKPointAnnotation.h>
 #import <BaiduMapAPI_Location/BMKLocationService.h>
 
 
 
 @interface MainMapViewController : UIViewController
-
-
-
+//设置地图view
 @property(strong,nonatomic)BMKMapView *mapView;
 @property(strong, nonatomic)BMKMapView *bmkMapView;
 
+//设置地图下方的信息View
+@property(strong,nonatomic)UIView *menuView;
 
 
 
