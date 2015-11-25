@@ -16,12 +16,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        
+        [self creatSubView];
     }
     return self;
 }
 
+-(void)creatSubView
+{
 
+
+
+
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "LoginViewController.h"
+
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 
 @interface AppDelegate ()<BMKGeneralDelegate>
@@ -23,10 +26,10 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //aB69Of3Rcvp4RVR2X5kM1uOw为百度地图的appkey
+    //vxIvcgAR0j3aQwV8kj2fBnI8为百度地图的appkey
     //启动BaiduMapManager
     self.mapManager = [[BMKMapManager alloc] init];
-    BOOL ret = [self.mapManager start:@"aB69Of3Rcvp4RVR2X5kM1uOw" generalDelegate:self];
+    BOOL ret = [self.mapManager start:@"vxIvcgAR0j3aQwV8kj2fBnI8" generalDelegate:self];
     
     if (!ret) {
         NSLog(@"百度地图开启");
@@ -35,7 +38,7 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    MainViewController *rootC = [[MainViewController alloc] init];
+    LoginViewController *rootC = [[LoginViewController alloc] init];
     UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:rootC];
     
     self.window.rootViewController = naVC;
