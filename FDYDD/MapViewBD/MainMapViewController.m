@@ -24,7 +24,7 @@
     self.view.backgroundColor = [UIColor cyanColor];
     
     self.navigationController.navigationBarHidden = YES;
-    //初始化地图的方法
+    //初始化地图的方法00
     [self initMapView];
     
     
