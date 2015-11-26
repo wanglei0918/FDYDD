@@ -23,4 +23,8 @@
 
 
 
+//预约陪诊传过来的联系人名字
+@property(strong,nonatomic)UILabel *lblUserName;
+
+
 @end

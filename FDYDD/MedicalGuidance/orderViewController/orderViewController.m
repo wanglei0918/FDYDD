@@ -11,7 +11,7 @@
 #import "orderView.h"
 #import "TghosptlController.h"
 #import "DatePickView.h"
-#import "NSDate+GetString.h"
+
 
 @interface orderViewController ()<GetSelectedDateDelegate,UIActionSheetDelegate>
 {
@@ -73,12 +73,9 @@
         make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(240), FIXWIDTHORHEIGHT(40)));
     }];
     releasebtn.frame = CGRectMake(self.orderview.lblPrompt.left, self.orderview.lblPrompt.bottom+FIXWIDTHORHEIGHT(15), FIXWIDTHORHEIGHT(255), FIXWIDTHORHEIGHT(30));
-    [releasebtn setTitle:@"登录" forState:UIControlStateNormal];
+    [releasebtn setTitle:@"发布需求" forState:UIControlStateNormal];
     releasebtn.backgroundColor = RGBCOLOR(220, 10, 12);
-    releasebtn.layer.cornerRadius = 22*HEIGHT;
-    if (iPHone4oriPHone4s && iPHone5) {
-        releasebtn.layer.cornerRadius = 25*HEIGHT;
-    }
+    releasebtn.layer.cornerRadius = FIXWIDTHORHEIGHT(20);
     [releasebtn addTarget:self action:@selector(releasebtn) forControlEvents:UIControlEventTouchUpInside];
     
 }
@@ -170,7 +167,6 @@
         case 0:
             self.orderview.lbltype.text = @"普通（100元/小时）";
             break;
-            
         case 1:
             self.orderview.lbltype.text = @"专业（150元/小时）";
             break;
@@ -193,10 +189,22 @@
     self.orderview.lblremktxt.text = self.remarkView.text;
     [self.btnBack removeFromSuperview];
 }
-//最下面的发布按钮
+//下面的发布需求按钮
 -(void)releasebtn
 {
-    NSLog(@"发布请求");
+    if (self.orderview.txtfdPatient.text.length != 0) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeInterface" object:@"yes"];
+        [self dismissViewControllerAnimated:YES completion:^{
+            MainMapViewController *main = [[MainMapViewController alloc] init];
+            main.lblUserName.text = self.orderview.txtfdPatient.text;
+            
+        }];
+        return;
+        NSLog(@"发布请求");
+    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入就医者姓名" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
 }
 
 //模态返回方法

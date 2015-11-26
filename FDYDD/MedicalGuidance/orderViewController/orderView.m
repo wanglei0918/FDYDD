@@ -65,7 +65,7 @@
     [self.imgvwPerson addSubview:self.lblCont];
     self.lblCont.text = @"联系人:";
     self.txtfdContact = [[UITextField alloc] initWithFrame:CGRectMake(self.lblCont.right+2, self.lblCont.top, FIXWIDTHORHEIGHT(200), high)];
-     self.txtfdContact.placeholder = @"请输入姓名";
+    self.txtfdContact.placeholder = @"请输入姓名";
     self.txtfdContact.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
     [self.imgvwPerson addSubview:self.txtfdContact];
     

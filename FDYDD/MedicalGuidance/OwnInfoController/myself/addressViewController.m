@@ -18,10 +18,19 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor orangeColor];
+    self.navigationController.navigationBarHidden = NO;
 
 
 
 }
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"0123");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -29,6 +29,7 @@
 		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; settings = {ASSET_TAGS = (); }; };
+		024DBD3E1C058856004C05D5 /* waitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DBD3D1C058856004C05D5 /* waitView.m */; settings = {ASSET_TAGS = (); }; };
 		024E94951BF9763B000EAFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024E94931BF975EA000EAFA0 /* UIKit.framework */; };
 		02668D461C0456790078610B /* accountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02668D451C0456790078610B /* accountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		02668D491C0456870078610B /* addressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02668D481C0456870078610B /* addressViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -103,6 +104,8 @@
 		0240BE3D1C02BD700074445E /* DatePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickView.m; sourceTree = "<group>"; };
 		0240BE3F1C02E20A0074445E /* NSDate+GetString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+GetString.h"; path = "../NSDate+GetString.h"; sourceTree = "<group>"; };
 		0240BE401C02E20A0074445E /* NSDate+GetString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+GetString.m"; path = "../NSDate+GetString.m"; sourceTree = "<group>"; };
+		024DBD3C1C058856004C05D5 /* waitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waitView.h; sourceTree = "<group>"; };
+		024DBD3D1C058856004C05D5 /* waitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waitView.m; sourceTree = "<group>"; };
 		024E94931BF975EA000EAFA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		02668D441C0456790078610B /* accountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountViewController.h; sourceTree = "<group>"; };
 		02668D451C0456790078610B /* accountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountViewController.m; sourceTree = "<group>"; };
@@ -366,6 +369,8 @@
 			children = (
 				026F0CC01BF5E06200D01C61 /* MainMapViewController.h */,
 				026F0CC11BF5E06200D01C61 /* MainMapViewController.m */,
+				024DBD3C1C058856004C05D5 /* waitView.h */,
+				024DBD3D1C058856004C05D5 /* waitView.m */,
 			);
 			path = MapViewBD;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				027D37C61BF9E57500D759B5 /* UIViewExt.m in Sources */,
 				02701EFC1BF2E070003F20A6 /* LoginViewController.m in Sources */,
 				02668D4C1C0456D40078610B /* myOrderController.m in Sources */,
+				024DBD3E1C058856004C05D5 /* waitView.m in Sources */,
 				02238B7A1BFD7D9D00E7A6D7 /* OwnInfoController.m in Sources */,
 				02701EC71BF2DE06003F20A6 /* AppDelegate.mm in Sources */,
 				027CBE9E1BFD63DF003F3F07 /* AFNConnection.m in Sources */,

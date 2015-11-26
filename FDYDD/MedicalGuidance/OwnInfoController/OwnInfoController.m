@@ -13,7 +13,14 @@
 
 
 
-@interface OwnInfoController ()
+@interface OwnInfoController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+{
+//下拉菜单
+UIActionSheet *myActionSheet;
+//图片2进制路径
+NSString* filePath;
+}
+@property(strong,nonatomic)UIButton *headbtn;
 
 @property(strong,nonatomic)UILabel *lblName;
 @property(strong,nonatomic)UILabel *lblphone;
@@ -30,10 +37,15 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.hidden = YES;
 
+    UIImageView *imgBase = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.size.width,FIXWIDTHORHEIGHT(185))];
+    imgBase.image = [UIImage imageNamed:@"myinfobg"];
+    [self.view addSubview:imgBase];
+
+    
     //模态消失按钮
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(FIXWIDTHORHEIGHT(15), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(40));
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"x"] forState:UIControlStateNormal];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     //模态消息页面按钮
@@ -67,17 +79,14 @@
 -(void)btnAction
 {
     //我的头像按钮
-    UIButton *headbtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:headbtn];
-    headbtn.frame = CGRectMake(FIXWIDTHORHEIGHT(110), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(80));
-    headbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(40);
-    headbtn.backgroundColor = [UIColor whiteColor];
-    [headbtn setTitle:@"头像" forState:UIControlStateNormal];
-    [headbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    headbtn.backgroundColor = [UIColor whiteColor];
-    [headbtn addTarget:self action:@selector(headAction) forControlEvents:UIControlEventTouchUpInside];
-    headbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    headbtn.layer.borderWidth = 0.5;
+    _headbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:_headbtn];
+    _headbtn.frame = CGRectMake(FIXWIDTHORHEIGHT(120), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(80));
+    _headbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(40);
+    [_headbtn addTarget:self action:@selector(headAction) forControlEvents:UIControlEventTouchUpInside];
+    _headbtn.layer.masksToBounds = YES;
+    _headbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
+    _headbtn.layer.borderWidth = 0.5;
     //头像下面的label
     self.lblName = [[UILabel alloc] init];
     [self.view addSubview:self.lblName];
@@ -85,7 +94,7 @@
     self.lblName.textAlignment = NSTextAlignmentCenter;
     [self.lblName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(headbtn).with.offset(FIXWIDTHORHEIGHT(35));
+        make.bottom.equalTo(_headbtn).with.offset(FIXWIDTHORHEIGHT(35));
         make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(30)));
     }];
     //头像下方的imgV
@@ -102,26 +111,31 @@
     [self.imgPHone addSubview:imgPhone];
     //头像下方的imgV上的lblPhone
     self.lblphone = [[UILabel alloc] initWithFrame:CGRectMake(imgPhone.right, imgPhone.top, FIXWIDTHORHEIGHT(120), FIXWIDTHORHEIGHT(30))];
-     self.lblphone.textAlignment = NSTextAlignmentCenter;
     self.lblphone.text = @"18812345678";
     self.lblphone.textColor = RGBCOLOR(200, 200, 200);
     [self.imgPHone addSubview:self.lblphone];
     
+    
+    int sizeXY = 60;
+    int rangeforleft = 30;
+    int sizefont = 12;
+    if (iPHone4oriPHone4s) {
+        rangeforleft = 60;
+        sizefont = 10;
+        sizeXY = 40;
+    }
+    
     //我的账户按钮及下方lbl
     UIButton *accountbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:accountbtn];
-    accountbtn.frame = CGRectMake(FIXWIDTHORHEIGHT(30), headbtn.bottom+FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(60));
+    accountbtn.frame = CGRectMake(FIXWIDTHORHEIGHT(rangeforleft), _headbtn.bottom+FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(sizeXY));
     accountbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(30);
-    accountbtn.backgroundColor = [UIColor whiteColor];
-    [accountbtn setTitle:@"账" forState:UIControlStateNormal];
-    [accountbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [accountbtn setBackgroundImage:[UIImage imageNamed:@"mywallet"] forState:UIControlStateNormal];
     [accountbtn addTarget:self action:@selector(accountAction) forControlEvents:UIControlEventTouchUpInside];
-    accountbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    accountbtn.layer.borderWidth = 0.5;
-    self.lblaccount = [[UILabel alloc] initWithFrame:CGRectMake(accountbtn.left, accountbtn.bottom, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    self.lblaccount = [[UILabel alloc] initWithFrame:CGRectMake(accountbtn.left, accountbtn.bottom, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(25))];
     self.lblaccount.text = @"我的账户";
     self.lblaccount.textColor = RGBCOLOR(200, 200, 200);
-    self.lblaccount.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(12)];
+    self.lblaccount.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(sizefont)];
     self.lblaccount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.lblaccount];
     
@@ -129,72 +143,56 @@
     //地址管理按钮及下方lbl
     UIButton *addressbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:addressbtn];
-    addressbtn.frame = CGRectMake(accountbtn.right+FIXWIDTHORHEIGHT(40), accountbtn.top, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(60));
+    addressbtn.frame = CGRectMake(accountbtn.right+FIXWIDTHORHEIGHT(40), accountbtn.top, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(sizeXY));
     addressbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(30);
-    addressbtn.backgroundColor = [UIColor whiteColor];
-    [addressbtn setTitle:@"址" forState:UIControlStateNormal];
-    [addressbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [addressbtn addTarget:self action:@selector(addressAction) forControlEvents:UIControlEventTouchUpInside];
-    addressbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    addressbtn.layer.borderWidth = 0.5;
-    self.lbladdress = [[UILabel alloc] initWithFrame:CGRectMake(addressbtn.left, addressbtn.bottom, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    [addressbtn setBackgroundImage:[UIImage imageNamed:@"myadd"] forState:UIControlStateNormal];
+    self.lbladdress = [[UILabel alloc] initWithFrame:CGRectMake(addressbtn.left, addressbtn.bottom, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(25))];
     self.lbladdress.text = @"地址管理";
     self.lbladdress.textColor = RGBCOLOR(200, 200, 200);
-    self.lbladdress.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(12)];
+    self.lbladdress.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(sizefont)];
     self.lbladdress.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.lbladdress];
     
     //我的订单按钮及下方lbl
     UIButton *orderbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:orderbtn];
-    orderbtn.frame = CGRectMake(addressbtn.right+FIXWIDTHORHEIGHT(40), addressbtn.top, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(60));
+    orderbtn.frame = CGRectMake(addressbtn.right+FIXWIDTHORHEIGHT(40), addressbtn.top, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(sizeXY));
     orderbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(30);
-    orderbtn.backgroundColor = [UIColor whiteColor];
-    [orderbtn setTitle:@"订" forState:UIControlStateNormal];
-    [orderbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+   [orderbtn setBackgroundImage:[UIImage imageNamed:@"myorder"] forState:UIControlStateNormal];
     [orderbtn addTarget:self action:@selector(orderAction) forControlEvents:UIControlEventTouchUpInside];
-    orderbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    orderbtn.layer.borderWidth = 0.5;
-    self.lblorder = [[UILabel alloc] initWithFrame:CGRectMake(orderbtn.left, orderbtn.bottom, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    self.lblorder = [[UILabel alloc] initWithFrame:CGRectMake(orderbtn.left, orderbtn.bottom, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(25))];
     self.lblorder.text = @"我的订单";
     self.lblorder.textColor = RGBCOLOR(200, 200, 200);
-    self.lblorder.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(12)];
+    self.lblorder.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(sizefont)];
     self.lblorder.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.lblorder];
     
     //健康档案按钮及下方lbl
     UIButton *archivebtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:archivebtn];
-    archivebtn.frame = CGRectMake(FIXWIDTHORHEIGHT(30), accountbtn.bottom+FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(60));
+    archivebtn.frame = CGRectMake(FIXWIDTHORHEIGHT(rangeforleft), accountbtn.bottom+FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(sizeXY));
     archivebtn.layer.cornerRadius = FIXWIDTHORHEIGHT(30);
-    archivebtn.backgroundColor = [UIColor whiteColor];
-    [archivebtn setTitle:@"档" forState:UIControlStateNormal];
-    [archivebtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [archivebtn setBackgroundImage:[UIImage imageNamed:@"myhealth"] forState:UIControlStateNormal];
     [archivebtn addTarget:self action:@selector(archivesAction) forControlEvents:UIControlEventTouchUpInside];
-    archivebtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    archivebtn.layer.borderWidth = 0.5;
-    self.lblarchive = [[UILabel alloc] initWithFrame:CGRectMake(archivebtn.left, archivebtn.bottom, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    self.lblarchive = [[UILabel alloc] initWithFrame:CGRectMake(archivebtn.left, archivebtn.bottom, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(25))];
     self.lblarchive.text = @"健康档案";
     self.lblarchive.textColor = RGBCOLOR(200, 200, 200);
-    self.lblarchive.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(12)];
+    self.lblarchive.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(sizefont)];
     self.lblarchive.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.lblarchive];
     
     //关于按钮及下方lbl
     UIButton *aboutbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:aboutbtn];
-    aboutbtn.frame = CGRectMake(archivebtn.right+FIXWIDTHORHEIGHT(40), archivebtn.top, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(60));
+    aboutbtn.frame = CGRectMake(archivebtn.right+FIXWIDTHORHEIGHT(40), archivebtn.top, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(sizeXY));
     aboutbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(30);
-    aboutbtn.backgroundColor = [UIColor whiteColor];
-    [aboutbtn setTitle:@"关" forState:UIControlStateNormal];
-    [aboutbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [aboutbtn setBackgroundImage:[UIImage imageNamed:@"about"] forState:UIControlStateNormal];
     [aboutbtn addTarget:self action:@selector(aboutAction) forControlEvents:UIControlEventTouchUpInside];
-    aboutbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    aboutbtn.layer.borderWidth = 0.5;
-    self.lblabout = [[UILabel alloc] initWithFrame:CGRectMake(aboutbtn.left, aboutbtn.bottom, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    self.lblabout = [[UILabel alloc] initWithFrame:CGRectMake(aboutbtn.left, aboutbtn.bottom, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(25))];
     self.lblabout.text = @"关于";
     self.lblabout.textColor = RGBCOLOR(200, 200, 200);
-    self.lblabout.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(12)];
+    self.lblabout.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(sizefont)];
     self.lblabout.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.lblabout];
 
@@ -202,25 +200,50 @@
     //反馈按钮及下方lbl
     UIButton *feedbackbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:feedbackbtn];
-    feedbackbtn.frame = CGRectMake(aboutbtn.right+FIXWIDTHORHEIGHT(40), aboutbtn.top, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(60));
+    feedbackbtn.frame = CGRectMake(aboutbtn.right+FIXWIDTHORHEIGHT(40), aboutbtn.top, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(sizeXY));
     feedbackbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(30);
-    [feedbackbtn setTitle:@"馈" forState:UIControlStateNormal];
-    [feedbackbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [feedbackbtn setBackgroundImage:[UIImage imageNamed:@"feedback"] forState:UIControlStateNormal];
     [feedbackbtn addTarget:self action:@selector(feedbackAction) forControlEvents:UIControlEventTouchUpInside];
-    feedbackbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
-    feedbackbtn.layer.borderWidth = 0.5;
-    self.lblfeedback = [[UILabel alloc] initWithFrame:CGRectMake(feedbackbtn.left, feedbackbtn.bottom, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    self.lblfeedback = [[UILabel alloc] initWithFrame:CGRectMake(feedbackbtn.left, feedbackbtn.bottom, FIXWIDTHORHEIGHT(sizeXY), FIXWIDTHORHEIGHT(25))];
     self.lblfeedback.text = @"反馈";
     self.lblfeedback.textColor = RGBCOLOR(200, 200, 200);
-    self.lblfeedback.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(12)];
+    self.lblfeedback.font = [UIFont systemFontOfSize: FIXWIDTHORHEIGHT(sizefont)];
     self.lblfeedback.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.lblfeedback];
+    
+    
+    
+    //注册页面的logo
+    self.imgLogo = [[UIImageView alloc] init];
+    [self.view addSubview:self.imgLogo];
+    
+    if (iPHone4oriPHone4s) {
+        self.imgLogo.frame = CGRectMake(130, 380, 60, 80);
+    } else {
+        [self.imgLogo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.view).with.offset(FIXWIDTHORHEIGHT(-40));
+            make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(80)));
+        }];
+    }
+    self.imgLogo.image = [UIImage imageNamed:@"logo2"];
+    
+    
 }
+
+//头部视图按钮
+-(void)headAction
+{
+    myActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开照相机",@"从手机相册获取", nil];
+    [myActionSheet showInView:self.view];
+}
+
 //每个按钮的点击动作
 -(void)accountAction
 {
     NSLog(@"我的账户");
     accountViewController *account = [[accountViewController alloc] init];
+   
     [self.navigationController pushViewController:account animated:YES];
      
 }
@@ -228,8 +251,10 @@
 {
     NSLog(@"我的账户");
     addressViewController *address = [[addressViewController alloc] init];
+    
     [self.navigationController pushViewController:address animated:YES];
     
+  
 }
 
 
@@ -237,7 +262,90 @@
 
 
 
+// UIActionSheet  点击按钮触发的方法
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex NS_DEPRECATED_IOS(2_0, 8_3)
+{
+    //呼出的菜单按钮点击后的响应
+    if (buttonIndex == myActionSheet.cancelButtonIndex)
+    {
+        NSLog(@"取消");
+    }
+    if (buttonIndex == 0) {
+                [self takePhoto];
+    }
+    if (buttonIndex == 1){
+                [self LocalPhoto];
+    }
+}
+//开始拍照
+-(void)takePhoto
+{
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        //设置拍照后的图片可被编辑
+        picker.allowsEditing = YES;
+        picker.sourceType = sourceType;
+        [self presentViewController:picker animated:YES completion:^{
+        }];
+    }else
+    {
+        NSLog(@"模拟其中无法打开照相机,请在真机中使用");
+    }
+}
+//打开本地相册
+-(void)LocalPhoto
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    //设置选择后的图片可被编辑
+    picker.allowsEditing = YES;
+    
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
 
+//当选择一张图片进入这里
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info;
+{
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    //当选择的类型是图片
+    if ([type isEqualToString:@"public.image"]) {
+        //先把图片转成NSData
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        NSData *data;
+        if (UIImagePNGRepresentation(image) == nil)
+        {
+            data = UIImageJPEGRepresentation(image, 1.0);
+        }
+        else
+        {
+            data = UIImagePNGRepresentation(image);
+        }
+        //图片保存的路径
+        //这里将图片放在沙盒的documents文件夹中
+        NSString *DocumentsPath = [NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
+        //文件管理器
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+        [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+        [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:@"/image.png"] contents:data attributes:nil];
+        //得到选择后沙盒中图片的完整路径
+        filePath = [[NSString alloc]initWithFormat:@"%@%@",DocumentsPath,  @"/image.png"];
+        //关闭相册界面
+        [picker dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+        [_headbtn setBackgroundImage:image forState:UIControlStateNormal];
+    }
+}
 
 
 
