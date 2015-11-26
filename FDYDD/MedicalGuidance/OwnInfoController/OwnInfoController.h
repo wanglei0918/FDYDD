@@ -18,6 +18,9 @@
 @property(strong,nonatomic)UILabel *lblabout;
 @property(strong,nonatomic)UILabel *lblfeedback;
 
+//logo视图
+@property(strong,nonatomic)UIImageView *imgLogo;
+
 
 
 @end

@@ -115,7 +115,7 @@
     idcodeButton.layer.masksToBounds = YES;
     idcodeButton.layer.borderWidth = 1.0;
     idcodeButton.layer.borderColor = [RGBCOLOR(220, 10, 12) CGColor];
-    idcodeButton.layer.cornerRadius = FIXWIDTHORHEIGHT(18);
+    idcodeButton.layer.cornerRadius = FIXWIDTHORHEIGHT(16);
     
     
     //设置用户注册的的按钮
@@ -129,7 +129,6 @@
     [self.loginView addSubview:regsteButton];
     
 //    //设置用户协议
-//   self.ImageViewdelegate = [[UIImageView alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(40), self.idcodeImageV.frame.origin.y+FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(240), FIXWIDTHORHEIGHT(30))];
     self.ImageViewdelegate = [[UIImageView alloc] init];
     [self.loginView addSubview:self.ImageViewdelegate];
     [self.ImageViewdelegate mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -165,12 +164,12 @@
 
 -(void)regsteAction
 {
-    TipView *tipview = [[TipView alloc] init];
-    [self.view addSubview:tipview];
-    [tipview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.loginView);
-        make.size.mas_equalTo(CGSizeMake(251*HEIGHT, 251*HEIGHT));
-    }];
+//    TipView *tipview = [[TipView alloc] init];
+//    [self.view addSubview:tipview];
+//    [tipview mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.loginView);
+//        make.size.mas_equalTo(CGSizeMake(251*HEIGHT, 251*HEIGHT));
+//    }];
     MainMapViewController *mainVC = [[MainMapViewController alloc] init];
     [self.navigationController pushViewController:mainVC animated:YES];
     //时间间隔俩秒

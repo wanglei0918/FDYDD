@@ -10,33 +10,48 @@
 #import "orderViewController.h"
 #import "OwnInfoController.h"
 #import "MessageController.h"
-
+#import "waitView.h"
 
 
 @interface MainMapViewController ()<BMKMapViewDelegate>
+
+//等待接单时的视图
+@property(strong,nonatomic)waitView *waitview;
+@property(strong,nonatomic)UIView *baseView;
+
 
 @end
 
 @implementation MainMapViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationItem.title = @"陪诊人员正在接单";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"me"] style:UIBarButtonItemStyleDone target:self action:@selector(leftButton)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(rightButton)];
+    [self.navigationItem.rightBarButtonItem setTitle:@"取消订单"];
     self.navigationController.navigationBarHidden = YES;
-    //初始化地图的方法00
+    
+    //初始化地图的方法
     [self initMapView];
-    
-    
+
+   
     //地图下方的信息栏
     self.menuView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bottom-100*HEIGHT, self.view.width, 100*HEIGHT)];
     self.menuView.backgroundColor = RGBCOLOR(246, 246, 246);
     [self.view addSubview:self.menuView];
     //在信息栏中放三个按钮
     [self MakeButton];
-    
-}
 
+    //注册消息通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeInterface:) name:@"changeInterface" object:nil];
+   
+}
 -(void)initMapView
 {
     //初始化地图视图
@@ -47,7 +62,48 @@
     self.mapView.delegate = self;
     self.view = self.mapView;
 }
-
+-(void)changeInterface:(NSNotificationCenter *)notification
+{
+    //消息中心发送的通知
+    [self makeChange];
+}
+-(void)makeChange
+{
+    //显示导航栏并隐藏自定义的View
+    self.navigationController.navigationBarHidden = NO;
+    self.menuView.hidden = YES;
+    self.baseView= [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _baseView.exclusiveTouch = NO;
+    _baseView.multipleTouchEnabled = YES;
+    _baseView.backgroundColor = RGBACOLOR(0, 0, 0, 0.4);
+    [self.mapView addSubview:_baseView];
+    //显示等待接单时的界面View
+    self.waitview = [[waitView alloc] init];
+    [_baseView addSubview:self.waitview];
+    self.waitview.backgroundColor = [UIColor whiteColor];
+    [self.waitview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_baseView);
+        make.bottom.equalTo(_baseView).with.offset(FIXWIDTHORHEIGHT(-5));
+        make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(300), FIXWIDTHORHEIGHT(280)));
+    }];
+    //取消订单的按钮
+    UIButton *canclebtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    canclebtn.frame = CGRectMake(self.waitview.imgTime.left, self.waitview.imgTime.bottom+FIXWIDTHORHEIGHT(15), FIXWIDTHORHEIGHT(255), FIXWIDTHORHEIGHT(30));
+    canclebtn.backgroundColor = RGBCOLOR(220, 10, 12);
+    canclebtn.layer.cornerRadius = FIXWIDTHORHEIGHT(15);
+    canclebtn.backgroundColor = [UIColor whiteColor];
+    [canclebtn setTitle:@"取消订单" forState:UIControlStateNormal];
+    [canclebtn setTitleColor:RGBCOLOR(220, 10, 12) forState:UIControlStateNormal];
+    [canclebtn addTarget:self action:@selector(canclebtn) forControlEvents:UIControlEventTouchUpInside];
+    canclebtn.layer.borderColor = RGBCOLOR(220, 10, 12).CGColor;
+    canclebtn.layer.borderWidth = 1.5;
+    [self.waitview addSubview:canclebtn];
+    
+}
+-(void)canclebtn
+{
+    [self.baseView removeFromSuperview];
+}
 -(void)MakeButton
 {
     //设置我的页面按钮
@@ -120,6 +176,8 @@
         NSLog(@"进入预约陪诊的页面");
     }];
 }
+
+
 
 
 
