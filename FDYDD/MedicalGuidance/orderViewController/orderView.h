@@ -33,7 +33,7 @@
 @property(strong,nonatomic)UITextField *txtfdContact;
 @property(strong,nonatomic)UITextField *txtfdPhone;
 @property(strong,nonatomic)UITextField *txtfdPatient;
-
+//固定label后方的信息（目标医院后面那些）
 @property(strong,nonatomic)UILabel *lblhosptxt;
 @property(strong,nonatomic)UILabel *lbltimetxt;
 @property(strong,nonatomic)UILabel *lblremktxt;
@@ -44,7 +44,14 @@
 
 //服务类型后面的类型label
 @property(strong,nonatomic)UILabel *lbltype;
-
 @property(strong,nonatomic)UILabel *lblPrompt;
+
+//服务时长label
+@property(strong,nonatomic)UILabel *lblnumber;
+
+//合计多少元
+@property(strong,nonatomic)UILabel *lblmoney;
+@property(strong,nonatomic)UILabel *lblrmb;
+
 
 @end

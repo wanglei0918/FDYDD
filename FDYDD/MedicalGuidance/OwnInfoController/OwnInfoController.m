@@ -10,7 +10,10 @@
 #import "MessageController.h"
 #import "accountViewController.h"
 #import "addressViewController.h"
-
+#import "myOrderController.h"
+#import "archiveViewController.h"
+#import "aboutViewController.h"
+#import "feedBackController.h"
 
 
 @interface OwnInfoController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -45,13 +48,13 @@ NSString* filePath;
     //模态消失按钮
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(FIXWIDTHORHEIGHT(15), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(40));
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     //模态消息页面按钮
     UIButton *infoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    infoBtn.frame = CGRectMake(FIXWIDTHORHEIGHT(275), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(40));
-    [infoBtn setBackgroundImage:[UIImage imageNamed:@"message"] forState:UIControlStateNormal];
+    infoBtn.frame = CGRectMake(FIXWIDTHORHEIGHT(275), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(50), FIXWIDTHORHEIGHT(50));
+    [infoBtn setBackgroundImage:[UIImage imageNamed:@"message1"] forState:UIControlStateNormal];
     [infoBtn addTarget:self action:@selector(infobtnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:infoBtn];
 
@@ -84,6 +87,7 @@ NSString* filePath;
     _headbtn.frame = CGRectMake(FIXWIDTHORHEIGHT(120), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(80));
     _headbtn.layer.cornerRadius = FIXWIDTHORHEIGHT(40);
     [_headbtn addTarget:self action:@selector(headAction) forControlEvents:UIControlEventTouchUpInside];
+    [_headbtn setBackgroundImage:[UIImage imageNamed:@"car"] forState:UIControlStateNormal];
     _headbtn.layer.masksToBounds = YES;
     _headbtn.layer.borderColor = RGBCOLOR(200, 200, 200).CGColor;
     _headbtn.layer.borderWidth = 0.5;
@@ -227,8 +231,6 @@ NSString* filePath;
         }];
     }
     self.imgLogo.image = [UIImage imageNamed:@"logo2"];
-    
-    
 }
 
 //头部视图按钮
@@ -243,23 +245,38 @@ NSString* filePath;
 {
     NSLog(@"我的账户");
     accountViewController *account = [[accountViewController alloc] init];
-   
     [self.navigationController pushViewController:account animated:YES];
-     
 }
 -(void)addressAction
 {
-    NSLog(@"我的账户");
+    NSLog(@"地址管理");
     addressViewController *address = [[addressViewController alloc] init];
-    
     [self.navigationController pushViewController:address animated:YES];
-    
-  
 }
-
-
-
-
+-(void)orderAction
+{
+    NSLog(@"我的订单");
+    myOrderController *myOrder = [[myOrderController alloc] init];
+    [self.navigationController pushViewController:myOrder animated:YES];
+}
+-(void)archivesAction
+{
+    NSLog(@"档案管理");
+    archiveViewController *archive = [[archiveViewController alloc] init];
+    [self.navigationController pushViewController:archive animated:YES];
+}
+-(void)aboutAction
+{
+    NSLog(@"关于");
+    aboutViewController *about = [[aboutViewController alloc] init];
+    [self.navigationController pushViewController:about animated:YES];
+}
+-(void)feedbackAction
+{
+    NSLog(@"反馈");
+    feedBackController *feedback = [[feedBackController alloc] init];
+    [self.navigationController pushViewController:feedback animated:YES];
+}
 
 
 // UIActionSheet  点击按钮触发的方法

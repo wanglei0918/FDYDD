@@ -59,6 +59,7 @@
 
     
     int itlforX = FIXWIDTHORHEIGHT(40);  int itlforY = FIXWIDTHORHEIGHT(5); int width = FIXWIDTHORHEIGHT(60); int high = FIXWIDTHORHEIGHT(30);
+    
     //设置联系人
     self.lblCont = [[UILabel alloc] initWithFrame:CGRectMake(itlforX, itlforY, FIXWIDTHORHEIGHT(50), high)];
     self.lblCont.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
@@ -70,7 +71,6 @@
     [self.imgvwPerson addSubview:self.txtfdContact];
     
     
-    
     //设置电话label
     self.lblContPhone = [[UILabel alloc] initWithFrame:CGRectMake(itlforX, self.lblCont.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(50), high)];
     self.lblContPhone.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
@@ -78,6 +78,7 @@
     self.lblContPhone.text = @"电    话:";
     self.txtfdPhone = [[UITextField alloc] initWithFrame:CGRectMake(self.lblContPhone.right+2, self.lblContPhone.top, FIXWIDTHORHEIGHT(200), high)];
     self.txtfdPhone.placeholder = @"请输入联系方式";
+    self.txtfdPhone.keyboardType = UIKeyboardTypePhonePad;
     self.txtfdPhone.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
     [self.imgvwPerson addSubview:self.txtfdPhone];
     
@@ -106,6 +107,11 @@
     [self.imgvwInfo addSubview:self.imgArrhosp];
     self.imgArrhosp.image = [UIImage imageNamed:@"more"];
     
+    //每行中的线
+    UIImageView *imgline1 = [[UIImageView alloc] initWithFrame:CGRectMake(self.lblHospital.left, self.lblHospital.bottom+FIXWIDTHORHEIGHT(3), FIXWIDTHORHEIGHT(251), 1)];
+    imgline1.backgroundColor = RGBCOLOR(233, 234, 235);
+    [self.imgvwInfo addSubview:imgline1];
+
     
     //服务时间
     self.lblTime = [[UILabel alloc] initWithFrame:CGRectMake(itlforX, self.lblHospital.bottom+FIXWIDTHORHEIGHT(5), width, high)];
@@ -120,6 +126,10 @@
     [self.imgvwInfo addSubview:self.imgArrtime];
     self.imgArrtime.image = [UIImage imageNamed:@"more"];
     
+    //每行中的线
+    UIImageView *imgline2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.lblTime.left, self.lblTime.bottom+FIXWIDTHORHEIGHT(3), FIXWIDTHORHEIGHT(251), 1)];
+    imgline2.backgroundColor = RGBCOLOR(233, 234, 235);
+    [self.imgvwInfo addSubview:imgline2];
     
     //备注说明
     self.lblRemark = [[UILabel alloc] initWithFrame:CGRectMake(itlforX, self.lblTime.bottom+FIXWIDTHORHEIGHT(5), width, high)];
@@ -146,11 +156,21 @@
     self.lbltype.text = @"普通（100元/小时）";
     [self.imgvwType addSubview:self.lbltype];
     
+    //每行中的线
+    UIImageView *imgline3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.lblSevtype.left, self.lblSevtype.bottom+FIXWIDTHORHEIGHT(3), FIXWIDTHORHEIGHT(251), 1)];
+    imgline3.backgroundColor =  RGBCOLOR(233, 234, 235);
+    [self.imgvwType addSubview:imgline3];
+    
     //服务时长 与 合计
     self.lblDtn = [[UILabel alloc] initWithFrame:CGRectMake(itlforX, itlforY, width, high)];
     self.lblDtn.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
     [self.imgvwDtn addSubview:self.lblDtn];
     self.lblDtn.text = @"服务时长:";
+    
+    //每行中的线
+    UIImageView *imgline4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.lblDtn.left, self.lblDtn.bottom+FIXWIDTHORHEIGHT(3), FIXWIDTHORHEIGHT(251), 1)];
+    imgline4.backgroundColor =  RGBCOLOR(233, 234, 235);
+    [self.imgvwDtn addSubview:imgline4];
     
     self.lblSum = [[UILabel alloc] initWithFrame:CGRectMake(itlforX, self.lblDtn.bottom+FIXWIDTHORHEIGHT(5 ), 40, high)];
     self.lblSum.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
@@ -182,13 +202,106 @@
     self.lblPrompt.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
     [self.scrollView addSubview:self.lblPrompt];
     
+    //计时减0.5
+    UIButton *minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    minusButton.frame = CGRectMake(FIXWIDTHORHEIGHT(190), self.lblDtn.top+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(20));
+    [minusButton addTarget:self action:@selector(minusAction) forControlEvents:UIControlEventTouchUpInside];
+    [minusButton setImage:[UIImage imageNamed:@"minus-1"] forState:UIControlStateNormal];
+    [self.imgvwDtn addSubview:minusButton];
+    
+     //计时加0.5
+    UIButton *plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    plusButton.frame = CGRectMake(FIXWIDTHORHEIGHT(275), self.lblDtn.top+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(20));
+    [plusButton addTarget:self action:@selector(plusAction) forControlEvents:UIControlEventTouchUpInside];
+    [plusButton setImage:[UIImage imageNamed:@"plus-1"] forState:UIControlStateNormal];
+    [self.imgvwDtn addSubview:plusButton];
+    
+    self.lblnumber = [[UILabel alloc] initWithFrame:CGRectMake(minusButton.right, minusButton.top, FIXWIDTHORHEIGHT(30), FIXWIDTHORHEIGHT(20))];
+    self.lblnumber.text = @"2.0";
+//    self.lblnumber.backgroundColor = [UIColor cyanColor];
+    self.lblnumber.textAlignment = NSTextAlignmentCenter;
+     [self.lblnumber setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(12)]];
+    [self.imgvwDtn addSubview:self.lblnumber];
+    
+    UILabel *lblhour = [[UILabel alloc] initWithFrame:CGRectMake(self.lblnumber.right, plusButton.top, FIXWIDTHORHEIGHT(30), FIXWIDTHORHEIGHT(20))];
+    lblhour.text = @"小时";
+//     lblhour.backgroundColor = [UIColor cyanColor];
+    [lblhour setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(12)]];
+    [self.imgvwDtn addSubview:lblhour];
+
+    
+    
+    self.lblmoney = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(220), self.lblSum.top+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(50), FIXWIDTHORHEIGHT(20))];
+    if ([self.lbltype.text isEqualToString:@"普通（100元/小时）"]) {
+        self.lblmoney.text = @"200";
+    }
+    if ([self.lbltype.text isEqualToString:@"专业（150元/小时）"]) {
+       self.lblmoney.text = @"300";
+    }
+    if ([self.lbltype.text isEqualToString:@"VIP（200元/小时）"]) {
+       self.lblmoney.text = @"400";
+    }
+    self.lblmoney.textColor = [UIColor redColor];
+    self.lblmoney.textAlignment = NSTextAlignmentCenter;
+    [self.imgvwDtn addSubview:self.lblmoney];
+    
+    self.lblrmb = [[UILabel alloc] initWithFrame:CGRectMake(self.lblmoney.right, self.lblmoney.top, FIXWIDTHORHEIGHT(30), FIXWIDTHORHEIGHT(20))];
+    self.lblrmb.text = @"元";
+    [self.lblrmb setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(12)]];
+    [self.imgvwDtn addSubview:self.lblrmb];
     
 }
-
-
-
-
-
+//时间减按钮
+-(void)minusAction
+{
+    int price = 100;
+    if ([self.lbltype.text isEqualToString:@"普通（100元/小时）"]) {
+       price = 100;
+    }
+    if ([self.lbltype.text isEqualToString:@"专业（150元/小时）"]) {
+       price = 150;
+    }
+    if ([self.lbltype.text isEqualToString:@"VIP（200元/小时）"]) {
+        price = 200;
+    }
+    //先由字符串转数字，再由数字转回字符串
+    int pay = 0;
+    double number = [self.lblnumber.text doubleValue];
+    if (number>2) {
+        number = number - 0.5;
+        pay = pay + 1;
+    }
+    self.lblnumber.text = [NSString stringWithFormat:@"%0.1f",number];
+    //计算合计多少
+    int money = [self.lblmoney.text intValue];
+    money = money - price*pay*0.5;
+    self.lblmoney.text = [NSString stringWithFormat:@"%d",money];
+    NSLog(@"时间减");
+}
+//时间加按钮
+-(void)plusAction
+{
+    int price = 100;
+    if ([self.lbltype.text isEqualToString:@"普通（100元/小时）"]) {
+        price = 100;
+    }
+    if ([self.lbltype.text isEqualToString:@"专业（150元/小时）"]) {
+        price = 150;
+    }
+    if ([self.lbltype.text isEqualToString:@"VIP（200元/小时）"]) {
+        price = 200;
+    }
+    //先由字符串转数字，再由数字转回字符串
+    int pay = 1;
+    double number = [self.lblnumber.text doubleValue];
+    number = number + 0.5;
+    self.lblnumber.text = [NSString stringWithFormat:@"%0.1f",number];
+    //计算合计多少
+    int money = [self.lblmoney.text intValue];
+    money = money + price*pay*0.5;
+    self.lblmoney.text = [NSString stringWithFormat:@"%d",money];
+    NSLog(@"时间加");
+}
 
 
 
