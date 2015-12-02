@@ -8,21 +8,18 @@
 
 #import "orderViewController.h"
 #import "ServeInstrutionController.h"
-#import "orderView.h"
 #import "TghosptlController.h"
 #import "DatePickView.h"
 
 
-@interface orderViewController ()<GetSelectedDateDelegate,UIActionSheetDelegate>
+@interface orderViewController ()<UITextFieldDelegate,GetSelectedDateDelegate,UIActionSheetDelegate>
 {
     //下拉菜单
     UIActionSheet *typeActionSheet;
 }
 
-@property(strong,nonatomic)orderView *orderview;
 @property(strong,nonatomic)UIButton *btnBack;
 @property(strong,nonatomic)UITextView *remarkView;
-
 
 @end
 
@@ -37,12 +34,20 @@
     self.navigationItem.title = @"预约陪诊";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(leftButton)];
     [self.navigationItem.leftBarButtonItem setTitle:@"返回"];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(rightButton)];
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(rightbutton)];
     [self.navigationItem.rightBarButtonItem setTitle:@"服务说明"];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor redColor]];
-    //设置目标医院后的隐形按钮
+    
     self.orderview= [[orderView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.view addSubview:self.orderview];
+    //Return回收键盘
+    self.orderview.txtfdContact.delegate = self;
+    self.orderview.txtfdPatient.delegate = self;
+    self.orderview.txtfdPhone.delegate = self;
+    
+    //设置目标医院后的隐形按钮
     UIButton *TgHospbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     TgHospbtn.frame = CGRectMake(self.orderview.lblHospital.left, self.orderview.lblHospital.top, FIXWIDTHORHEIGHT(255), FIXWIDTHORHEIGHT(30));
     [self.orderview.imgvwInfo addSubview:TgHospbtn];
@@ -162,17 +167,20 @@
     {
         NSLog(@"取消");
     }
-    switch (buttonIndex)
-    {
-        case 0:
-            self.orderview.lbltype.text = @"普通（100元/小时）";
-            break;
-        case 1:
-            self.orderview.lbltype.text = @"专业（150元/小时）";
-            break;
-        case 2:
-            self.orderview.lbltype.text = @"VIP（200元/小时）";
-            break;
+    else if (buttonIndex == 0){
+        self.orderview.lbltype.text = @"普通（100元/小时）";
+        self.orderview.lblmoney.text = @"200";
+        self.orderview.lblnumber.text = @"2.0";
+    }
+    else if (buttonIndex == 1){
+        self.orderview.lbltype.text = @"专业（150元/小时）";
+        self.orderview.lblmoney.text = @"300";
+        self.orderview.lblnumber.text = @"2.0";
+    }
+    else if (buttonIndex == 2){
+        self.orderview.lbltype.text = @"VIP（200元/小时）";
+        self.orderview.lblmoney.text = @"400";
+        self.orderview.lblnumber.text = @"2.0";
     }
 }
 //设置备注说明的三个函数
@@ -196,9 +204,8 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"changeInterface" object:@"yes"];
         [self dismissViewControllerAnimated:YES completion:^{
-            MainMapViewController *main = [[MainMapViewController alloc] init];
-            main.lblUserName.text = self.orderview.txtfdPatient.text;
-            
+            //实现协议 传orderview 给MainMapViewController
+            [self.myDelegate sendMessage:self.orderview];
         }];
         return;
         NSLog(@"发布请求");
@@ -215,15 +222,22 @@
     }];
 }
 //服务说明按钮方法
--(void)rightButton
+-(void)rightbutton
 {
     ServeInstrutionController *serveInstrution = [[ServeInstrutionController alloc] init];
+   
     [self.navigationController presentViewController:serveInstrution animated:YES completion:^{
         
     }];
 }
-
-
+//点击return回收键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.orderview.txtfdContact resignFirstResponder];
+    [self.orderview.txtfdPatient resignFirstResponder];
+    [self.orderview.txtfdPhone resignFirstResponder];
+    return YES;
+}
 
 
 

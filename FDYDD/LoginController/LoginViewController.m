@@ -164,16 +164,20 @@
 
 -(void)regsteAction
 {
-//    TipView *tipview = [[TipView alloc] init];
-//    [self.view addSubview:tipview];
-//    [tipview mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.loginView);
-//        make.size.mas_equalTo(CGSizeMake(251*HEIGHT, 251*HEIGHT));
-//    }];
-    MainMapViewController *mainVC = [[MainMapViewController alloc] init];
-    [self.navigationController pushViewController:mainVC animated:YES];
-    //时间间隔俩秒
-  //  [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(timerAction) userInfo:nil repeats:NO];
+    UIView *aView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    aView.backgroundColor = [UIColor blackColor];
+    aView.alpha = 0.5;
+    [self.view addSubview:aView];
+    
+    TipView *tipview = [[TipView alloc] init];
+    [self.view addSubview:tipview];
+    [tipview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.loginView);
+        make.size.mas_equalTo(CGSizeMake(251*HEIGHT, 251*HEIGHT));
+    }];
+    tipview.layer.cornerRadius = 10;
+   // 时间间隔俩秒
+  [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(timerAction) userInfo:nil repeats:NO];
     
 }
 
@@ -194,8 +198,9 @@
 
 -(void)timerAction
 {
-   
-    NSLog(@"注册");
+    MainMapViewController *mainVC = [[MainMapViewController alloc] init];
+    [self.navigationController pushViewController:mainVC animated:YES];
+    NSLog(@"登录");
 }
 
 

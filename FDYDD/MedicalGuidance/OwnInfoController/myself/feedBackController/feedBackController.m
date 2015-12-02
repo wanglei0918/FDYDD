@@ -1,23 +1,33 @@
 //
-//  myOrderController.m
+//  feedBackController.m
 //  FDYDD
 //
 //  Created by fdkj0001 on 15/11/24.
 //  Copyright © 2015年 fdkj0001. All rights reserved.
 //
 
-#import "myOrderController.h"
+#import "feedBackController.h"
 
-@interface myOrderController ()
+@interface feedBackController ()
 
 @end
 
-@implementation myOrderController
+@implementation feedBackController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+   self.view.backgroundColor = [UIColor cyanColor];
+
 }
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"0123");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

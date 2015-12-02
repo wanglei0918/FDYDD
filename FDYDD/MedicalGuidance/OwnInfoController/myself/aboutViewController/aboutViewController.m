@@ -10,14 +10,27 @@
 
 @interface aboutViewController ()
 
+
+
 @end
 
 @implementation aboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   self.view.backgroundColor = [UIColor cyanColor];
+
+
 }
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"0123");
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

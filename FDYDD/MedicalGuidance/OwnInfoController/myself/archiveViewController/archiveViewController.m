@@ -1,24 +1,24 @@
 //
-//  accountViewController.m
+//  archiveViewController.m
 //  FDYDD
 //
 //  Created by fdkj0001 on 15/11/24.
 //  Copyright © 2015年 fdkj0001. All rights reserved.
 //
 
-#import "accountViewController.h"
+#import "archiveViewController.h"
 
-@interface accountViewController ()
+@interface archiveViewController ()
 
 @end
 
-@implementation accountViewController
+@implementation archiveViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
-//    self.navigationController.navigationBar.hidden = NO;
-    
+   self.view.backgroundColor = [UIColor cyanColor];
+
+
 }
 
 
@@ -27,10 +27,6 @@
     [self.navigationController popViewControllerAnimated:YES];
     NSLog(@"0123");
 }
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
