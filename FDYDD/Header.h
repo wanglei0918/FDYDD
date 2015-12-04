@@ -65,5 +65,10 @@
 
 
 
+//评分处的图片
+#define kBACKGROUND_STAR @"ratingoff@2x"
+#define kFOREGROUND_STAR @"ratingon@2x"
+#define kNUMBER_OF_STAR  5
+
 
 #endif /* Header_h */

@@ -198,9 +198,26 @@
 
 -(void)timerAction
 {
+     NSLog(@"登录");
     MainMapViewController *mainVC = [[MainMapViewController alloc] init];
     [self.navigationController pushViewController:mainVC animated:YES];
-    NSLog(@"登录");
+   
+
+    NSString *string = @"http://192.168.31.134:8080/bdys-app/ping/json";
+    //body体内是对象类型（id）
+//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.userText.text forKey:@"电话"];
+//    [AFNConnection PostDataUrl:string body:dictionary block:^(id backData) {
+//        
+//        NSLog(@"success:%@",backData);
+//        id temp = [backData objectForKey:@"Msg"];
+//        NSLog(@"%@",temp);
+//        
+//    } error:^(NSError *error) {
+//          NSLog(@"error:%@",error);
+//    }];
+
+   
+    
 }
 
 

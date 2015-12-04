@@ -7,7 +7,7 @@
 //
 
 #import "myOrderController.h"
-
+#import "OrderDetailController.h"
 
 
 @interface myOrderController ()
@@ -51,32 +51,64 @@
     self.OrderTableView.delegate = self;
     self.OrderTableView.dataSource = self;
     
-    
+ self.countArray = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8", nil];
 }
-
+//cell个数
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.countArray.count;
 }
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *mycell = @"mycell";
     myOrderTableView *cell = [tableView dequeueReusableCellWithIdentifier:mycell];
     if (cell == nil) {
         cell = [[myOrderTableView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mycell];
-    }
+   
+    
+        }
     //取消点击效果（灰色）
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     
-   
-  return cell;
 }
+
+
+//点击cell进入详情
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //根据坐标获取当前点击的tabView
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    OrderDetailController *orderDetail = [[OrderDetailController alloc] init];
+    [self.navigationController pushViewController:orderDetail animated:YES];
+}
+
+
+//设置edit的方法
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [self.OrderTableView setEditing:YES animated:YES];
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.countArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView endUpdates];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    }
+}
+
 //cell的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return FIXWIDTHORHEIGHT(70);
 }
+
+
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

@@ -16,9 +16,10 @@ typedef void(^errorBlock) (NSError *error);
 @interface AFNConnection : NSObject
 
 
+//GET请求
 +(void)GetData:(NSString *)string block:(myblock)block;
-
-
+//Post请求
++ (void)PostDataUrl:(NSString *)string body:(NSDictionary *)body block:(myblock)block error:(errorBlock)errorBlock;
 
 //+(void)GetData:(NSString *)string block:(myblock)block blockError:(errorBlock)blockError;
 
