@@ -31,14 +31,17 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     //设置导航栏
-    self.navigationItem.title = @"预约陪诊";
+    UILabel *Titlelbl = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(180), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(30))];
+    Titlelbl.textColor= RGBCOLOR(220, 10, 12);
+    Titlelbl.text = @"预约陪诊";
+    self.navigationItem.titleView = Titlelbl;
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(leftButton)];
     [self.navigationItem.leftBarButtonItem setTitle:@"返回"];
     
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(rightbutton)];
-    [self.navigationItem.rightBarButtonItem setTitle:@"服务说明"];
-    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor redColor]];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"服务说明" style:UIBarButtonItemStyleBordered target:self action:@selector(rightbutton)];
+    rightItem.tintColor = RGBCOLOR(220, 10, 12);
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     self.orderview= [[orderView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.view addSubview:self.orderview];
@@ -68,6 +71,48 @@
     typebtn.frame = CGRectMake(self.orderview.lblSevtype.left, self.orderview.lblSevtype.top, FIXWIDTHORHEIGHT(255), FIXWIDTHORHEIGHT(30));
     [self.orderview.imgvwType addSubview:typebtn];
     [typebtn addTarget:self action:@selector(typebtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    //设置服务类型下的四个需求类型
+    int size = 40; int instance = 30;
+    UIImageView *imgInhosp = [[UIImageView alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(30), FIXWIDTHORHEIGHT(50), FIXWIDTHORHEIGHT(size), FIXWIDTHORHEIGHT(size))];
+    imgInhosp.image = [UIImage imageNamed:@"inhospital"];
+    [self.orderview.imgvwType addSubview:imgInhosp];
+    UILabel *lblinhosp = [[UILabel alloc] initWithFrame:CGRectMake(imgInhosp.left-FIXWIDTHORHEIGHT(6), imgInhosp.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    lblinhosp.text = @"院内陪诊";
+    lblinhosp.textColor = RGBCOLOR(236, 105, 65);
+    lblinhosp.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+//    lblinhosp.backgroundColor = [UIColor yellowColor];
+    [self.orderview.imgvwType addSubview:lblinhosp];
+
+    UIImageView *imgReport = [[UIImageView alloc] initWithFrame:CGRectMake(imgInhosp.right+FIXWIDTHORHEIGHT(instance),imgInhosp.top, FIXWIDTHORHEIGHT(size), FIXWIDTHORHEIGHT(size))];
+    imgReport.image = [UIImage imageNamed:@"report"];
+    [self.orderview.imgvwType addSubview:imgReport];
+    UILabel *lblreport = [[UILabel alloc] initWithFrame:CGRectMake(imgReport.left-FIXWIDTHORHEIGHT(6), imgReport.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    lblreport.text = @"取送报告";
+    lblreport.textColor = RGBCOLOR(179, 212, 101);
+    lblreport.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+//    lblreport.backgroundColor = [UIColor yellowColor];
+    [self.orderview.imgvwType addSubview:lblreport];
+    
+    UIImageView *imgQueue = [[UIImageView alloc] initWithFrame:CGRectMake(imgReport.right+FIXWIDTHORHEIGHT(instance), imgReport.top, FIXWIDTHORHEIGHT(size), FIXWIDTHORHEIGHT(size))];
+    imgQueue.image = [UIImage imageNamed:@"queue"];
+    [self.orderview.imgvwType addSubview:imgQueue];
+    UILabel *lblqueue = [[UILabel alloc] initWithFrame:CGRectMake(imgQueue.left-FIXWIDTHORHEIGHT(6), imgQueue.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    lblqueue.text = @"排队取药";
+    lblqueue.textColor = RGBCOLOR(68, 138, 202);
+    lblqueue.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+//    lblqueue.backgroundColor = [UIColor yellowColor];
+    [self.orderview.imgvwType addSubview:lblqueue];
+    
+    UIImageView *imgCar = [[UIImageView alloc] initWithFrame:CGRectMake(imgQueue.right+FIXWIDTHORHEIGHT(instance), imgQueue.top, FIXWIDTHORHEIGHT(size), FIXWIDTHORHEIGHT(size))];
+    imgCar.image = [UIImage imageNamed:@"car"];
+    [self.orderview.imgvwType addSubview:imgCar];
+    UILabel *lblcar = [[UILabel alloc] initWithFrame:CGRectMake(imgCar.left-FIXWIDTHORHEIGHT(6), imgCar.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    lblcar.text = @"专车服务";
+    lblcar.textColor = RGBCOLOR(69, 218, 238);
+    lblcar.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+//    lblcar.backgroundColor = [UIColor yellowColor];
+    [self.orderview.imgvwType addSubview:lblcar];
     
     //设置发布需求按钮
     UIButton *releasebtn = [UIButton buttonWithType:UIButtonTypeCustom];

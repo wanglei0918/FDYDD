@@ -28,6 +28,15 @@
 		023E0FC71BFB0C9600991ED8 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC61BFB0C9600991ED8 /* libstdc++.6.0.9.tbd */; };
 		023EC9CE1C0E8BC600F68E75 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CB1C0E8BC600F68E75 /* TipView.m */; settings = {ASSET_TAGS = (); }; };
 		023EC9CF1C0E8BC600F68E75 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CD1C0E8BC600F68E75 /* UIViewExt.m */; settings = {ASSET_TAGS = (); }; };
+		023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */; settings = {ASSET_TAGS = (); }; };
+		023ECA741C0EEFFF00F68E75 /* backgroundStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA6C1C0EEFFF00F68E75 /* backgroundStar.png */; settings = {ASSET_TAGS = (); }; };
+		023ECA751C0EEFFF00F68E75 /* backgroundStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA6D1C0EEFFF00F68E75 /* backgroundStar@2x.png */; settings = {ASSET_TAGS = (); }; };
+		023ECA761C0EEFFF00F68E75 /* foregroundStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA6E1C0EEFFF00F68E75 /* foregroundStar.png */; settings = {ASSET_TAGS = (); }; };
+		023ECA771C0EEFFF00F68E75 /* foregroundStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA6F1C0EEFFF00F68E75 /* foregroundStar@2x.png */; settings = {ASSET_TAGS = (); }; };
+		023ECA781C0EEFFF00F68E75 /* ratingoff@2x_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA701C0EEFFF00F68E75 /* ratingoff@2x_1.png */; settings = {ASSET_TAGS = (); }; };
+		023ECA791C0EEFFF00F68E75 /* ratingon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA711C0EEFFF00F68E75 /* ratingon@2x.png */; settings = {ASSET_TAGS = (); }; };
+		023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA731C0EEFFF00F68E75 /* TQStarRatingView.m */; settings = {ASSET_TAGS = (); }; };
+		023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA7C1C0EFAE300F68E75 /* RatView.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; settings = {ASSET_TAGS = (); }; };
@@ -103,6 +112,18 @@
 		023EC9CB1C0E8BC600F68E75 /* TipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipView.m; sourceTree = "<group>"; };
 		023EC9CC1C0E8BC600F68E75 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		023EC9CD1C0E8BC600F68E75 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		023EC9D01C0EC2DE00F68E75 /* OrderDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailController.h; sourceTree = "<group>"; };
+		023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailController.m; sourceTree = "<group>"; };
+		023ECA6C1C0EEFFF00F68E75 /* backgroundStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundStar.png; sourceTree = "<group>"; };
+		023ECA6D1C0EEFFF00F68E75 /* backgroundStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundStar@2x.png"; sourceTree = "<group>"; };
+		023ECA6E1C0EEFFF00F68E75 /* foregroundStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundStar.png; sourceTree = "<group>"; };
+		023ECA6F1C0EEFFF00F68E75 /* foregroundStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foregroundStar@2x.png"; sourceTree = "<group>"; };
+		023ECA701C0EEFFF00F68E75 /* ratingoff@2x_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ratingoff@2x_1.png"; sourceTree = "<group>"; };
+		023ECA711C0EEFFF00F68E75 /* ratingon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ratingon@2x.png"; sourceTree = "<group>"; };
+		023ECA721C0EEFFF00F68E75 /* TQStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQStarRatingView.h; sourceTree = "<group>"; };
+		023ECA731C0EEFFF00F68E75 /* TQStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQStarRatingView.m; sourceTree = "<group>"; };
+		023ECA7B1C0EFAE300F68E75 /* RatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatView.h; sourceTree = "<group>"; };
+		023ECA7C1C0EFAE300F68E75 /* RatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatView.m; sourceTree = "<group>"; };
 		0240BE381C02AE350074445E /* TghosptlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TghosptlController.h; sourceTree = "<group>"; };
 		0240BE391C02AE350074445E /* TghosptlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TghosptlController.m; sourceTree = "<group>"; };
 		0240BE3C1C02BD700074445E /* DatePickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickView.h; sourceTree = "<group>"; };
@@ -266,6 +287,29 @@
 				023EC9CB1C0E8BC600F68E75 /* TipView.m */,
 			);
 			path = Package;
+			sourceTree = "<group>";
+		};
+		023ECA6A1C0EEFFF00F68E75 /* TQStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				023ECA6B1C0EEFFF00F68E75 /* Image */,
+				023ECA721C0EEFFF00F68E75 /* TQStarRatingView.h */,
+				023ECA731C0EEFFF00F68E75 /* TQStarRatingView.m */,
+			);
+			path = TQStarRating;
+			sourceTree = "<group>";
+		};
+		023ECA6B1C0EEFFF00F68E75 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				023ECA6C1C0EEFFF00F68E75 /* backgroundStar.png */,
+				023ECA6D1C0EEFFF00F68E75 /* backgroundStar@2x.png */,
+				023ECA6E1C0EEFFF00F68E75 /* foregroundStar.png */,
+				023ECA6F1C0EEFFF00F68E75 /* foregroundStar@2x.png */,
+				023ECA701C0EEFFF00F68E75 /* ratingoff@2x_1.png */,
+				023ECA711C0EEFFF00F68E75 /* ratingon@2x.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		0240BE371C02ADDB0074445E /* Target hospital Controller */ = {
@@ -436,6 +480,7 @@
 		027D37C31BF9E57500D759B5 /* Thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				023ECA6A1C0EEFFF00F68E75 /* TQStarRating */,
 				023EC9C91C0E8BC600F68E75 /* Package */,
 				0240BE3B1C02BD610074445E /* DatePicker */,
 				027CBE951BFD6020003F3F07 /* AFNnetwok */,
@@ -486,6 +531,10 @@
 				02DC876D1C0C36B4007CDF39 /* myOrderController.m */,
 				02DC87731C0C3AAD007CDF39 /* myOrderTableView.h */,
 				02DC87741C0C3AAD007CDF39 /* myOrderTableView.m */,
+				023EC9D01C0EC2DE00F68E75 /* OrderDetailController.h */,
+				023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */,
+				023ECA7B1C0EFAE300F68E75 /* RatView.h */,
+				023ECA7C1C0EFAE300F68E75 /* RatView.m */,
 			);
 			path = myOrderController;
 			sourceTree = "<group>";
@@ -622,10 +671,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023ECA781C0EEFFF00F68E75 /* ratingoff@2x_1.png in Resources */,
 				02701ED21BF2DE06003F20A6 /* LaunchScreen.storyboard in Resources */,
+				023ECA761C0EEFFF00F68E75 /* foregroundStar.png in Resources */,
 				020796E01BFB0E6A00568D54 /* mapapi.bundle in Resources */,
 				02701ECF1BF2DE06003F20A6 /* Assets.xcassets in Resources */,
 				02701ECD1BF2DE06003F20A6 /* Main.storyboard in Resources */,
+				023ECA751C0EEFFF00F68E75 /* backgroundStar@2x.png in Resources */,
+				023ECA791C0EEFFF00F68E75 /* ratingon@2x.png in Resources */,
+				023ECA741C0EEFFF00F68E75 /* backgroundStar.png in Resources */,
+				023ECA771C0EEFFF00F68E75 /* foregroundStar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,8 +756,11 @@
 				0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */,
 				02DC876E1C0C36B4007CDF39 /* aboutViewController.m in Sources */,
 				02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */,
+				023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */,
 				02DC87751C0C3AAD007CDF39 /* myOrderTableView.m in Sources */,
+				023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */,
 				02DC87701C0C36B4007CDF39 /* archiveViewController.m in Sources */,
+				023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */,
 				02701EFC1BF2E070003F20A6 /* LoginViewController.m in Sources */,
 				024DBD3E1C058856004C05D5 /* waitView.m in Sources */,
 				02671BD41C080C2F000E0AAD /* accountViewController.m in Sources */,
