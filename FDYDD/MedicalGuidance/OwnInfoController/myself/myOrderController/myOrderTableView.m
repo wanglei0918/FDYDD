@@ -30,7 +30,15 @@
     self.imgBase.image = [UIImage imageNamed:@"orderoff"];
     [self addSubview:self.imgBase];
     
-        
+    
+    UIImageView *imgGray = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, FIXWIDTHORHEIGHT(500), FIXWIDTHORHEIGHT(5))];
+    imgGray.backgroundColor = [UIColor whiteColor];
+     UIImageView *imgGray1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, FIXWIDTHORHEIGHT(65), FIXWIDTHORHEIGHT(500), FIXWIDTHORHEIGHT(5))];
+    imgGray1.backgroundColor = [UIColor whiteColor];
+    [self addSubview:imgGray];
+    [self addSubview:imgGray1];
+    
+  
     self.lblTime = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(10), self.imgBase.top+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(150), FIXWIDTHORHEIGHT(25))];
     [self.imgBase addSubview:self.lblTime];
     [self.lblTime setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(12)]];

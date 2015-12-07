@@ -16,4 +16,10 @@
 @property(strong,nonatomic)UITableView *OrderTableView;
 
 
+
+
+
+
+@property(strong,nonatomic)NSMutableArray *countArray;
+
 @end

@@ -26,9 +26,9 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
     [self addSubview:_scrollView];
     if (iPHone4oriPHone4s) {
-        _scrollView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height+150);
+        _scrollView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height+180);
     }else{
-        _scrollView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height+60);
+        _scrollView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height+FIXWIDTHORHEIGHT(80));
         
     }
     
@@ -46,7 +46,7 @@
     _imgvwInfo.image = [UIImage imageNamed:@"bg-3"];
     
     //服务类型下的UIImageView
-    self.imgvwType = [[UIImageView alloc] initWithFrame:CGRectMake(self.imgvwInfo.left, self.imgvwInfo.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(300), FIXWIDTHORHEIGHT(120))];
+    self.imgvwType = [[UIImageView alloc] initWithFrame:CGRectMake(self.imgvwInfo.left, self.imgvwInfo.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(300), FIXWIDTHORHEIGHT(140))];
     self.imgvwType.userInteractionEnabled = YES;
     [_scrollView addSubview:_imgvwType];
     _imgvwType.image = [UIImage imageNamed:@"bg-3"];
