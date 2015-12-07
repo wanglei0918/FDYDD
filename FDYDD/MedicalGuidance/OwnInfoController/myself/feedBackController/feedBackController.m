@@ -110,7 +110,7 @@
     
     self.lblContent = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, FIXWIDTHORHEIGHT(290), FIXWIDTHORHEIGHT(25))];
     [self.textContent addSubview:self.lblContent];
-    self.lblContent.text = @"  请输入您的反馈内容1";
+    self.lblContent.text = @"  请输入您反馈内容";
     self.lblContent.enabled = NO;
     self.lblContent.textColor = RGBCOLOR(131, 132, 133);
     self.lblContent.backgroundColor = [UIColor clearColor];
