@@ -22,7 +22,7 @@
 
     NSLog(@"000");
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStyleDone target:self action:@selector(rightButton)];
-    [self.navigationItem.rightBarButtonItem setTitle:@"登录"];
+    [self.navigationItem.rightBarButtonItem setTitle:@"登录1"];
     
 
 }
