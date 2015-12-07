@@ -184,7 +184,31 @@
 -(void)idcodeButton
 {
     NSLog(@"获取验证码");
+    //使用正则表达式判断手机号码
+    //[self checkTel:self.userText.text];
+//        NSString *string = @"http://192.168.31.134:8080/bdys-app/ping/json";
+
+        //body体内是对象类型（id）
+//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.userText.text forKey:@"phone"];
+//        [AFNConnection PostDataUrl:string body:dictionary block:^(id backData) {
+//            
+//            NSLog(@"success:%@",backData);
+//            id temp = [backData objectForKey:@"Msg"];
+//            NSLog(@"%@",temp);
+//            
+//        } error:^(NSError *error) {
+//            NSLog(@"error:%@",error);
+//        }];
+    
 }
+
+-(void)timerAction
+{
+     NSLog(@"登录");
+    MainMapViewController *mainVC = [[MainMapViewController alloc] init];
+    [self.navigationController pushViewController:mainVC animated:YES];
+}
+//手势获取用户协议
 -(void)tapGesture:(UITapGestureRecognizer*)tap
 {
     NSLog(@"获取用户协议");
@@ -196,30 +220,30 @@
     [self.idcodeText resignFirstResponder];
 }
 
--(void)timerAction
+
+//手机正则表达式判断手机号
+- (BOOL)checkTel:(NSString *)str
 {
-     NSLog(@"登录");
-    MainMapViewController *mainVC = [[MainMapViewController alloc] init];
-    [self.navigationController pushViewController:mainVC animated:YES];
-   
-
-    NSString *string = @"http://192.168.31.134:8080/bdys-app/ping/json";
-    //body体内是对象类型（id）
-//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.userText.text forKey:@"电话"];
-//    [AFNConnection PostDataUrl:string body:dictionary block:^(id backData) {
-//        
-//        NSLog(@"success:%@",backData);
-//        id temp = [backData objectForKey:@"Msg"];
-//        NSLog(@"%@",temp);
-//        
-//    } error:^(NSError *error) {
-//          NSLog(@"error:%@",error);
-//    }];
-
-   
+    if ([str length] == 0) {
+        
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"手机号不能为空" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return NO;
+    }
+      NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
     
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    BOOL isMatch = [pred evaluateWithObject:str];
+    
+    if (!isMatch) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入正确的手机号码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return NO;
+    }
+    NSLog(@"成功");
+    return YES;
 }
-
 
 
 - (void)didReceiveMemoryWarning {

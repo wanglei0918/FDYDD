@@ -96,6 +96,7 @@ NSString* filePath;
     [self.view addSubview:self.lblName];
     self.lblName.text = @"布袋医仕";
     self.lblName.textAlignment = NSTextAlignmentCenter;
+    self.lblName.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(15)];
     [self.lblName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(_headbtn).with.offset(FIXWIDTHORHEIGHT(35));
@@ -106,7 +107,7 @@ NSString* filePath;
     [self.view addSubview:self.imgPHone];
     [self.imgPHone mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.lblName).with.offset(FIXWIDTHORHEIGHT(35));
+        make.bottom.equalTo(self.lblName).with.offset(FIXWIDTHORHEIGHT(30));
         make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(150), FIXWIDTHORHEIGHT(30)));
     }];
     //头像下方的imgV上的imgPhone
@@ -116,6 +117,7 @@ NSString* filePath;
     //头像下方的imgV上的lblPhone
     self.lblphone = [[UILabel alloc] initWithFrame:CGRectMake(imgPhone.right, imgPhone.top, FIXWIDTHORHEIGHT(120), FIXWIDTHORHEIGHT(30))];
     self.lblphone.text = @"18812345678";
+     self.lblphone.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(15)];
     self.lblphone.textColor = RGBCOLOR(200, 200, 200);
     [self.imgPHone addSubview:self.lblphone];
     

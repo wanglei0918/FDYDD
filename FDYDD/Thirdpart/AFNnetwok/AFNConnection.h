@@ -25,4 +25,11 @@ typedef void(^errorBlock) (NSError *error);
 
 
 
+
+
+
+
+
+//测试
+//+ (void)PostDataUrl:(NSString *)string Str:(NSString *)str block:(myblock)block error:(errorBlock)errorBlock;
 @end

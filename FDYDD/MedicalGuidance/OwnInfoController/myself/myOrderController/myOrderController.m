@@ -43,8 +43,6 @@
     
     self.OrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.view.top+FIXWIDTHORHEIGHT(80), self.view.frame.size.width, self.view.frame.size.height-FIXWIDTHORHEIGHT(100)) style:UITableViewStylePlain];
     
-    NSLog(@"self.width == %f",self.view.frame.size.width);
-     NSLog(@"self == %f",self.view.bounds.size.width);
     //取消线
     self.OrderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.OrderTableView];
@@ -65,7 +63,6 @@
     if (cell == nil) {
         cell = [[myOrderTableView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mycell];
    
-    
         }
     //取消点击效果（灰色）
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -107,7 +104,6 @@
 {
     return FIXWIDTHORHEIGHT(70);
 }
-
 
 
 
