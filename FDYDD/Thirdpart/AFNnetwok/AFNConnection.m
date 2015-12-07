@@ -59,6 +59,32 @@
 }
 
 
+//测试用的
+//+ (void)PostDataUrl:(NSString *)string Str:(NSString *)str block:(myblock)block error:(errorBlock)errorBlock{
+//    
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    //申明返回的结果是json类型
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    //申明请求的数据是json类型
+//    manager.requestSerializer= [AFJSONRequestSerializer serializer];
+//    //如果报接受类型不一致请替换一致text/html或别的
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    //传入的参数
+//    
+//    [manager POST:string parameters:str success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+//        // block 回调
+//        block(responseObject);
+//        
+//    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+//        
+//        errorBlock(error);
+//        
+//    }];
+//    
+//    
+//}
+
+
 /*
  
  NSURL *URL = [NSURL URLWithString:@""];

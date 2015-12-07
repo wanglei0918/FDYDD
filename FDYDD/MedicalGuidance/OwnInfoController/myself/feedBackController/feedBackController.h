@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface feedBackController : UIViewController
+@interface feedBackController : UIViewController<UITextViewDelegate>
+
+//反馈主题
+@property(strong,nonatomic)UITextField *textTheme;
+//反馈主题内容
+@property(strong,nonatomic)UITextView *textContent;
+@property(strong,nonatomic)UILabel *lblContent;
+
 
 @end
