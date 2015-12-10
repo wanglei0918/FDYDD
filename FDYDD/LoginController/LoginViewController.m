@@ -191,7 +191,7 @@
 {
     NSLog(@"获取验证码");
     //使用正则表达式判断手机号码
-    
+ /*
     [self checkTel:self.userText.text];
         NSString *string = @"http://192.168.31.134:8080/bdys-app/account/verificationcode/getcode";
 
@@ -206,7 +206,7 @@
         } error:^(NSError *error) {
             NSLog(@"error:%@",error);
         }];
-    
+  */
 }
 
 
@@ -217,7 +217,7 @@
     MainMapViewController *mainVC = [[MainMapViewController alloc] init];
     [self.navigationController pushViewController:mainVC animated:YES];
     
-    
+   /*
      NSString *string = @"http://192.168.31.134:8080/bdys-app/account/user/login";
     
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:self.userText.text,@"phone",self.idcodeText.text,@"verifycode", nil];
@@ -231,8 +231,7 @@
         NSLog(@"error:%@",error);
     }];
 
-    
-    
+    */
     
     
 }

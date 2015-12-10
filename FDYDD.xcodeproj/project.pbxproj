@@ -26,22 +26,6 @@
 		023E0FC31BFB0C6A00991ED8 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC21BFB0C6A00991ED8 /* libsqlite3.0.tbd */; };
 		023E0FC51BFB0C7C00991ED8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC41BFB0C7C00991ED8 /* CoreTelephony.framework */; };
 		023E0FC71BFB0C9600991ED8 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC61BFB0C9600991ED8 /* libstdc++.6.0.9.tbd */; };
-<<<<<<< HEAD
-		023EC9CE1C0E8BC600F68E75 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CB1C0E8BC600F68E75 /* TipView.m */; settings = {ASSET_TAGS = (); }; };
-		023EC9CF1C0E8BC600F68E75 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CD1C0E8BC600F68E75 /* UIViewExt.m */; settings = {ASSET_TAGS = (); }; };
-		023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */; settings = {ASSET_TAGS = (); }; };
-		023ECA781C0EEFFF00F68E75 /* ratingoff@2x_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA701C0EEFFF00F68E75 /* ratingoff@2x_1.png */; settings = {ASSET_TAGS = (); }; };
-		023ECA791C0EEFFF00F68E75 /* ratingon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA711C0EEFFF00F68E75 /* ratingon@2x.png */; settings = {ASSET_TAGS = (); }; };
-		023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA731C0EEFFF00F68E75 /* TQStarRatingView.m */; settings = {ASSET_TAGS = (); }; };
-		023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA7C1C0EFAE300F68E75 /* RatView.m */; settings = {ASSET_TAGS = (); }; };
-		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; settings = {ASSET_TAGS = (); }; };
-		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; settings = {ASSET_TAGS = (); }; };
-		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; settings = {ASSET_TAGS = (); }; };
-		0248461D1C16B0F400C0666F /* addTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0248461C1C16B0F400C0666F /* addTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		024846201C16C04200C0666F /* addDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0248461F1C16C04200C0666F /* addDetailController.m */; settings = {ASSET_TAGS = (); }; };
-		024846231C16E28E00C0666F /* depositController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024846221C16E28E00C0666F /* depositController.m */; settings = {ASSET_TAGS = (); }; };
-		024DBD3E1C058856004C05D5 /* waitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DBD3D1C058856004C05D5 /* waitView.m */; settings = {ASSET_TAGS = (); }; };
-=======
 		023EC9CE1C0E8BC600F68E75 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CB1C0E8BC600F68E75 /* TipView.m */; };
 		023EC9CF1C0E8BC600F68E75 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CD1C0E8BC600F68E75 /* UIViewExt.m */; };
 		023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */; };
@@ -52,8 +36,10 @@
 		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; };
 		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; };
 		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; };
+		0248461D1C16B0F400C0666F /* addTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0248461C1C16B0F400C0666F /* addTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		024846201C16C04200C0666F /* addDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0248461F1C16C04200C0666F /* addDetailController.m */; settings = {ASSET_TAGS = (); }; };
+		024846231C16E28E00C0666F /* depositController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024846221C16E28E00C0666F /* depositController.m */; settings = {ASSET_TAGS = (); }; };
 		024DBD3E1C058856004C05D5 /* waitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DBD3D1C058856004C05D5 /* waitView.m */; };
->>>>>>> pr/10
 		024E94951BF9763B000EAFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024E94931BF975EA000EAFA0 /* UIKit.framework */; };
 		02671BD41C080C2F000E0AAD /* accountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD11C080C2F000E0AAD /* accountViewController.m */; };
 		02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD31C080C2F000E0AAD /* myActTableView.m */; };
@@ -788,11 +774,8 @@
 				3A1A32E91C1801B0003D0594 /* nameChangeViewController.m in Sources */,
 				02DC876E1C0C36B4007CDF39 /* aboutViewController.m in Sources */,
 				02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */,
-<<<<<<< HEAD
 				024846201C16C04200C0666F /* addDetailController.m in Sources */,
-=======
 				3A5798CC1C1662B9004050F6 /* personInfoViewController.m in Sources */,
->>>>>>> pr/10
 				023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */,
 				02DC87751C0C3AAD007CDF39 /* myOrderTableView.m in Sources */,
 				023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */,

@@ -157,7 +157,7 @@
 -(void)depositAction
 {
     NSLog(@"提出现金");
-
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
