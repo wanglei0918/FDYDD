@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "LoginViewController.h"
-
+#import <IQKeyboardManager.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 
 @interface AppDelegate ()<BMKGeneralDelegate>
@@ -42,6 +42,12 @@
     UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:rootC];
     
     self.window.rootViewController = naVC;
+    
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = YES;
     
     
     return YES;

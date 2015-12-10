@@ -21,7 +21,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = RGBCOLOR(235, 235, 243);
     
-
     [self UIInterface];
 }
 //设置界面
@@ -85,6 +84,13 @@
     self.lblstaus.text = @"已完成";
     [self.lblstaus setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)]];
     
+    //灰色的线
+    for (int i = 0; i < 4; i++) {
+        UIImageView *imgline = [[UIImageView alloc] initWithFrame:CGRectMake(imgvwStaus.left, FIXWIDTHORHEIGHT(50)+i*FIXWIDTHORHEIGHT(70), FIXWIDTHORHEIGHT(280), 1)];
+        imgline.backgroundColor = RGBCOLOR(233, 234, 235);
+        [baseView addSubview:imgline];
+    }
+    
     //设置联系人
     UIImageView *imgvwCont = [[UIImageView alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(20), imgvwStaus.bottom+FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(20))];
     imgvwCont.image = [UIImage imageNamed:@"contact"];
@@ -107,8 +113,6 @@
     self.lblPhone.text = @"18812345678";
     self.lblPhone.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
     [baseView addSubview:self.lblPhone];
-    
-
     
     
     //目标医院
@@ -172,15 +176,24 @@
     self.lbltypetxt.text = @"中等";
     [baseView addSubview:self.lbltypetxt];
     
+    self.lblmoneySum = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(320)-FIXWIDTHORHEIGHT(100), self.lbltypetxt.top, FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(25))];
+    self.lblmoneySum.text = @"2000";
+    self.lblmoneySum.textColor = RGBCOLOR(231, 119, 119);
+    self.lblmoneySum.textAlignment = NSTextAlignmentRight;
+    [baseView addSubview:self.lblmoneySum];
+    UILabel *lblcoin = [[UILabel alloc] initWithFrame:CGRectMake(self.lblmoneySum.right, self.lblmoneySum.top, FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(25))];
+    lblcoin.text = @"元";
+    lblcoin.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+    [baseView addSubview:lblcoin];
     
     //评分lbl
-    self.lblscore = [[UILabel alloc] initWithFrame:CGRectMake(imgvwPay.right+FIXWIDTHORHEIGHT(5), self.lbltypetxt.bottom+FIXWIDTHORHEIGHT(10), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(25))];
-    self.lblscore.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
-    self.lblscore.text = @"评分：";
-    [baseView addSubview:self.lblscore];
+    UILabel *lblasses = [[UILabel alloc] initWithFrame:CGRectMake(imgvwPay.right+FIXWIDTHORHEIGHT(5), self.lbltypetxt.bottom+FIXWIDTHORHEIGHT(10), FIXWIDTHORHEIGHT(40), FIXWIDTHORHEIGHT(25))];
+    lblasses.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+    lblasses.text = @"评分:";
+    [baseView addSubview:lblasses];
     
     //设置空心评分图
-    self.aview = [[UIView alloc]initWithFrame:CGRectMake(self.lblscore.right, self.lblscore.top, FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(25))];
+    self.aview = [[UIView alloc]initWithFrame:CGRectMake(lblasses.right, lblasses.top+FIXWIDTHORHEIGHT(3), FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(20))];
     CGRect frame = self.aview.bounds;
     for (int i = 0; i < 5; i ++)
     {
@@ -192,10 +205,20 @@
     [baseView addSubview:self.aview];
     
      //设置实心评分图
-    _ratview = [[RatView alloc] initWithFrame:CGRectMake(self.lblscore.right, self.lblscore.top, FIXWIDTHORHEIGHT(100)*4/5, FIXWIDTHORHEIGHT(25)) numberofstar:4];
+    _ratview = [[RatView alloc] initWithFrame:CGRectMake(self.aview.left, self.aview.top, FIXWIDTHORHEIGHT(100)*4/5, FIXWIDTHORHEIGHT(20)) numberofstar:4];
     [baseView addSubview:_ratview];
     
-    
+    self.lblscore = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(320)-FIXWIDTHORHEIGHT(60), _ratview.top, FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(30))];
+    self.lblscore.text = @"4";
+    self.lblscore.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(20)];
+    self.lblscore.textColor = RGBCOLOR(231, 119, 119);
+    self.lblscore.bottom = lblasses.bottom;
+    [baseView addSubview:self.lblscore];
+    UILabel *lblfen = [[UILabel alloc] initWithFrame:CGRectMake(self.lblscore.right, self.lblscore.top, FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(20))];
+    lblfen.text = @"分";
+    lblfen.bottom = self.lblscore.bottom;
+    lblfen.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)];
+    [baseView addSubview:lblfen];
     
 }
 
@@ -207,12 +230,6 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-
-
-
-
-
 
 
 

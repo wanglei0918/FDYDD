@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "depositController.h"
 
 @interface accountViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
