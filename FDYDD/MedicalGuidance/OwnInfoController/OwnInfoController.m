@@ -126,9 +126,9 @@ NSString* filePath;
     int rangeforleft = 30;
     int sizefont = 12;
     if (iPHone4oriPHone4s) {
-        rangeforleft = 60;
+        rangeforleft = 42;
         sizefont = 10;
-        sizeXY = 40;
+        sizeXY = 50;
     }
     
     //我的账户按钮及下方lbl

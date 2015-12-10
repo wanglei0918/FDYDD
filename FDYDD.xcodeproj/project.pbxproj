@@ -36,6 +36,9 @@
 		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; settings = {ASSET_TAGS = (); }; };
 		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; settings = {ASSET_TAGS = (); }; };
+		0248461D1C16B0F400C0666F /* addTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0248461C1C16B0F400C0666F /* addTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		024846201C16C04200C0666F /* addDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0248461F1C16C04200C0666F /* addDetailController.m */; settings = {ASSET_TAGS = (); }; };
+		024846231C16E28E00C0666F /* depositController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024846221C16E28E00C0666F /* depositController.m */; settings = {ASSET_TAGS = (); }; };
 		024DBD3E1C058856004C05D5 /* waitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DBD3D1C058856004C05D5 /* waitView.m */; settings = {ASSET_TAGS = (); }; };
 		024E94951BF9763B000EAFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024E94931BF975EA000EAFA0 /* UIKit.framework */; };
 		02671BD41C080C2F000E0AAD /* accountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD11C080C2F000E0AAD /* accountViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -122,6 +125,12 @@
 		0240BE3D1C02BD700074445E /* DatePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickView.m; sourceTree = "<group>"; };
 		0240BE3F1C02E20A0074445E /* NSDate+GetString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+GetString.h"; path = "../NSDate+GetString.h"; sourceTree = "<group>"; };
 		0240BE401C02E20A0074445E /* NSDate+GetString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+GetString.m"; path = "../NSDate+GetString.m"; sourceTree = "<group>"; };
+		0248461B1C16B0F400C0666F /* addTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addTableViewCell.h; sourceTree = "<group>"; };
+		0248461C1C16B0F400C0666F /* addTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addTableViewCell.m; sourceTree = "<group>"; };
+		0248461E1C16C04200C0666F /* addDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addDetailController.h; sourceTree = "<group>"; };
+		0248461F1C16C04200C0666F /* addDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addDetailController.m; sourceTree = "<group>"; };
+		024846211C16E28E00C0666F /* depositController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = depositController.h; sourceTree = "<group>"; };
+		024846221C16E28E00C0666F /* depositController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = depositController.m; sourceTree = "<group>"; };
 		024DBD3C1C058856004C05D5 /* waitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waitView.h; sourceTree = "<group>"; };
 		024DBD3D1C058856004C05D5 /* waitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waitView.m; sourceTree = "<group>"; };
 		024E94931BF975EA000EAFA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -340,6 +349,8 @@
 				02671BD11C080C2F000E0AAD /* accountViewController.m */,
 				02671BD21C080C2F000E0AAD /* myActTableView.h */,
 				02671BD31C080C2F000E0AAD /* myActTableView.m */,
+				024846211C16E28E00C0666F /* depositController.h */,
+				024846221C16E28E00C0666F /* depositController.m */,
 			);
 			path = accountViewController;
 			sourceTree = "<group>";
@@ -490,6 +501,10 @@
 			children = (
 				02DC87631C0C36B4007CDF39 /* addressViewController.h */,
 				02DC87641C0C36B4007CDF39 /* addressViewController.m */,
+				0248461B1C16B0F400C0666F /* addTableViewCell.h */,
+				0248461C1C16B0F400C0666F /* addTableViewCell.m */,
+				0248461E1C16C04200C0666F /* addDetailController.h */,
+				0248461F1C16C04200C0666F /* addDetailController.m */,
 			);
 			path = addressViewController;
 			sourceTree = "<group>";
@@ -740,12 +755,14 @@
 				0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */,
 				02DC876E1C0C36B4007CDF39 /* aboutViewController.m in Sources */,
 				02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */,
+				024846201C16C04200C0666F /* addDetailController.m in Sources */,
 				023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */,
 				02DC87751C0C3AAD007CDF39 /* myOrderTableView.m in Sources */,
 				023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */,
 				02DC87701C0C36B4007CDF39 /* archiveViewController.m in Sources */,
 				023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */,
 				02701EFC1BF2E070003F20A6 /* LoginViewController.m in Sources */,
+				024846231C16E28E00C0666F /* depositController.m in Sources */,
 				024DBD3E1C058856004C05D5 /* waitView.m in Sources */,
 				02671BD41C080C2F000E0AAD /* accountViewController.m in Sources */,
 				02238B7A1BFD7D9D00E7A6D7 /* OwnInfoController.m in Sources */,
@@ -758,6 +775,7 @@
 				02DC87711C0C36B4007CDF39 /* feedBackController.m in Sources */,
 				02238B7D1BFDA61000E7A6D7 /* ServeInstrutionController.m in Sources */,
 				02701EFF1BF2E084003F20A6 /* LoginView.m in Sources */,
+				0248461D1C16B0F400C0666F /* addTableViewCell.m in Sources */,
 				026CEB231BFEA9240018D95C /* orderView.m in Sources */,
 				02238B791BFD7D9D00E7A6D7 /* orderViewController.m in Sources */,
 				0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */,

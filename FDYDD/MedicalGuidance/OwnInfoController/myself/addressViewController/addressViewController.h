@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "addTableViewCell.h"
+#import "addDetailController.h"
 
-@interface addressViewController : UIViewController
+@interface addressViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+
+
+@property(strong,nonatomic)UITableView *addTableview;
+
+
 
 @end

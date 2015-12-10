@@ -42,6 +42,9 @@
     //标题下方的底层图片
     self.imgBase = [[UIImageView alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(10), FIXWIDTHORHEIGHT(70), self.view.width-FIXWIDTHORHEIGHT(10)*2, FIXWIDTHORHEIGHT(80))];
     self.imgBase.image = [UIImage imageNamed:@"bg-1"];
+    self.imgBase.userInteractionEnabled = YES;
+    
+    
     [self.view addSubview:self.imgBase];
     self.myActTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.imgBase.bottom, self.view.width, self.view.height-self.imgBase.bottom) style:UITableViewStylePlain];
     [self.view addSubview:self.myActTableView];
@@ -100,13 +103,14 @@
     self.lblbalan.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(15)];
   //  self.lblbalan.backgroundColor = [UIColor yellowColor];
 
-    self.lblnumber = [[UILabel alloc] initWithFrame:CGRectMake(self.lblbalan.right, FIXWIDTHORHEIGHT(50), FIXWIDTHORHEIGHT(70), 40)];
+    self.lblnumber = [[UILabel alloc] initWithFrame:CGRectMake(self.lblbalan.right, FIXWIDTHORHEIGHT(50), FIXWIDTHORHEIGHT(80), 40)];
     self.lblnumber.bottom = self.lblbalan.bottom;
     [self.imgBase addSubview:self.lblnumber];
-    self.lblnumber.text = @"3000";
+    self.lblnumber.text = @"30000";
+    [self.lblnumber setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(25)]];
     self.lblnumber.textAlignment = NSTextAlignmentCenter;
-//    self.lblnumber.backgroundColor = [UIColor yellowColor];
-    self.lblnumber.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(20)];
+    self.lblnumber.textColor = [UIColor redColor];
+    
     
     self.lblmoney = [[UILabel alloc] initWithFrame:CGRectMake(self.lblnumber.right, FIXWIDTHORHEIGHT(30), FIXWIDTHORHEIGHT(20), 30)];
     [self.imgBase addSubview:self.lblmoney];
@@ -124,9 +128,24 @@
         make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(50), FIXWIDTHORHEIGHT(50)));
     }];
     self.imgCash.image = [UIImage imageNamed:@"cash"];
-    
+    self.imgCash.userInteractionEnabled = YES;
+    UITapGestureRecognizer *cashTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cashtap)];
+    [self.imgCash addGestureRecognizer:cashTap];
     
 }
+
+-(void)cashtap
+{
+  
+    depositController *deposit = [[depositController alloc] init];
+    deposit.balance = self.lblnumber.text;
+    [self.navigationController pushViewController:deposit animated:YES];
+     
+}
+
+
+
+
 
 //设置edit的方法
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
