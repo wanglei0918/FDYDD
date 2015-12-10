@@ -7,41 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020796E01BFB0E6A00568D54 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 020796DF1BFB0E6A00568D54 /* mapapi.bundle */; settings = {ASSET_TAGS = (); }; };
-		02238B781BFD7D9D00E7A6D7 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B711BFD7D9D00E7A6D7 /* MessageController.m */; settings = {ASSET_TAGS = (); }; };
-		02238B791BFD7D9D00E7A6D7 /* orderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B741BFD7D9D00E7A6D7 /* orderViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02238B7A1BFD7D9D00E7A6D7 /* OwnInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B771BFD7D9D00E7A6D7 /* OwnInfoController.m */; settings = {ASSET_TAGS = (); }; };
-		02238B7D1BFDA61000E7A6D7 /* ServeInstrutionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B7C1BFDA61000E7A6D7 /* ServeInstrutionController.m */; settings = {ASSET_TAGS = (); }; };
+		020796E01BFB0E6A00568D54 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 020796DF1BFB0E6A00568D54 /* mapapi.bundle */; };
+		02238B781BFD7D9D00E7A6D7 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B711BFD7D9D00E7A6D7 /* MessageController.m */; };
+		02238B791BFD7D9D00E7A6D7 /* orderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B741BFD7D9D00E7A6D7 /* orderViewController.m */; };
+		02238B7A1BFD7D9D00E7A6D7 /* OwnInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B771BFD7D9D00E7A6D7 /* OwnInfoController.m */; };
+		02238B7D1BFDA61000E7A6D7 /* ServeInstrutionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02238B7C1BFDA61000E7A6D7 /* ServeInstrutionController.m */; };
 		023E0FAC1BFAFA8900991ED8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FAB1BFAFA8900991ED8 /* MapKit.framework */; };
-		023E0FB51BFB0B5000991ED8 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FAE1BFB0B5000991ED8 /* BaiduMapAPI_Base.framework */; settings = {ASSET_TAGS = (); }; };
-		023E0FB61BFB0B5000991ED8 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FAF1BFB0B5000991ED8 /* BaiduMapAPI_Cloud.framework */; settings = {ASSET_TAGS = (); }; };
-		023E0FB71BFB0B5000991ED8 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB01BFB0B5000991ED8 /* BaiduMapAPI_Location.framework */; settings = {ASSET_TAGS = (); }; };
-		023E0FB81BFB0B5000991ED8 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB11BFB0B5000991ED8 /* BaiduMapAPI_Map.framework */; settings = {ASSET_TAGS = (); }; };
-		023E0FB91BFB0B5000991ED8 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB21BFB0B5000991ED8 /* BaiduMapAPI_Radar.framework */; settings = {ASSET_TAGS = (); }; };
-		023E0FBA1BFB0B5000991ED8 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB31BFB0B5000991ED8 /* BaiduMapAPI_Search.framework */; settings = {ASSET_TAGS = (); }; };
-		023E0FBB1BFB0B5000991ED8 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB41BFB0B5000991ED8 /* BaiduMapAPI_Utils.framework */; settings = {ASSET_TAGS = (); }; };
+		023E0FB51BFB0B5000991ED8 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FAE1BFB0B5000991ED8 /* BaiduMapAPI_Base.framework */; };
+		023E0FB61BFB0B5000991ED8 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FAF1BFB0B5000991ED8 /* BaiduMapAPI_Cloud.framework */; };
+		023E0FB71BFB0B5000991ED8 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB01BFB0B5000991ED8 /* BaiduMapAPI_Location.framework */; };
+		023E0FB81BFB0B5000991ED8 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB11BFB0B5000991ED8 /* BaiduMapAPI_Map.framework */; };
+		023E0FB91BFB0B5000991ED8 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB21BFB0B5000991ED8 /* BaiduMapAPI_Radar.framework */; };
+		023E0FBA1BFB0B5000991ED8 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB31BFB0B5000991ED8 /* BaiduMapAPI_Search.framework */; };
+		023E0FBB1BFB0B5000991ED8 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FB41BFB0B5000991ED8 /* BaiduMapAPI_Utils.framework */; };
 		023E0FBD1BFB0BF200991ED8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FBC1BFB0BF200991ED8 /* CoreLocation.framework */; };
 		023E0FBF1BFB0C3300991ED8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FBE1BFB0C3300991ED8 /* QuartzCore.framework */; };
 		023E0FC11BFB0C3F00991ED8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC01BFB0C3F00991ED8 /* OpenGLES.framework */; };
 		023E0FC31BFB0C6A00991ED8 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC21BFB0C6A00991ED8 /* libsqlite3.0.tbd */; };
 		023E0FC51BFB0C7C00991ED8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC41BFB0C7C00991ED8 /* CoreTelephony.framework */; };
 		023E0FC71BFB0C9600991ED8 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 023E0FC61BFB0C9600991ED8 /* libstdc++.6.0.9.tbd */; };
-		023EC9CE1C0E8BC600F68E75 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CB1C0E8BC600F68E75 /* TipView.m */; settings = {ASSET_TAGS = (); }; };
-		023EC9CF1C0E8BC600F68E75 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CD1C0E8BC600F68E75 /* UIViewExt.m */; settings = {ASSET_TAGS = (); }; };
-		023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */; settings = {ASSET_TAGS = (); }; };
-		023ECA781C0EEFFF00F68E75 /* ratingoff@2x_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA701C0EEFFF00F68E75 /* ratingoff@2x_1.png */; settings = {ASSET_TAGS = (); }; };
-		023ECA791C0EEFFF00F68E75 /* ratingon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA711C0EEFFF00F68E75 /* ratingon@2x.png */; settings = {ASSET_TAGS = (); }; };
-		023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA731C0EEFFF00F68E75 /* TQStarRatingView.m */; settings = {ASSET_TAGS = (); }; };
-		023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA7C1C0EFAE300F68E75 /* RatView.m */; settings = {ASSET_TAGS = (); }; };
-		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; settings = {ASSET_TAGS = (); }; };
-		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; settings = {ASSET_TAGS = (); }; };
-		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; settings = {ASSET_TAGS = (); }; };
-		024DBD3E1C058856004C05D5 /* waitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DBD3D1C058856004C05D5 /* waitView.m */; settings = {ASSET_TAGS = (); }; };
+		023EC9CE1C0E8BC600F68E75 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CB1C0E8BC600F68E75 /* TipView.m */; };
+		023EC9CF1C0E8BC600F68E75 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9CD1C0E8BC600F68E75 /* UIViewExt.m */; };
+		023EC9D21C0EC2DE00F68E75 /* OrderDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023EC9D11C0EC2DE00F68E75 /* OrderDetailController.m */; };
+		023ECA781C0EEFFF00F68E75 /* ratingoff@2x_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA701C0EEFFF00F68E75 /* ratingoff@2x_1.png */; };
+		023ECA791C0EEFFF00F68E75 /* ratingon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023ECA711C0EEFFF00F68E75 /* ratingon@2x.png */; };
+		023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA731C0EEFFF00F68E75 /* TQStarRatingView.m */; };
+		023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ECA7C1C0EFAE300F68E75 /* RatView.m */; };
+		0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE391C02AE350074445E /* TghosptlController.m */; };
+		0240BE3E1C02BD700074445E /* DatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE3D1C02BD700074445E /* DatePickView.m */; };
+		0240BE411C02E20A0074445E /* NSDate+GetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0240BE401C02E20A0074445E /* NSDate+GetString.m */; };
+		024DBD3E1C058856004C05D5 /* waitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DBD3D1C058856004C05D5 /* waitView.m */; };
 		024E94951BF9763B000EAFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024E94931BF975EA000EAFA0 /* UIKit.framework */; };
-		02671BD41C080C2F000E0AAD /* accountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD11C080C2F000E0AAD /* accountViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD31C080C2F000E0AAD /* myActTableView.m */; settings = {ASSET_TAGS = (); }; };
-		026CEB231BFEA9240018D95C /* orderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 026CEB221BFEA9240018D95C /* orderView.m */; settings = {ASSET_TAGS = (); }; };
-		026F0CC21BF5E06200D01C61 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F0CC11BF5E06200D01C61 /* MainMapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		02671BD41C080C2F000E0AAD /* accountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD11C080C2F000E0AAD /* accountViewController.m */; };
+		02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02671BD31C080C2F000E0AAD /* myActTableView.m */; };
+		026CEB231BFEA9240018D95C /* orderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 026CEB221BFEA9240018D95C /* orderView.m */; };
+		026F0CC21BF5E06200D01C61 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F0CC11BF5E06200D01C61 /* MainMapViewController.m */; };
 		02701EC41BF2DE06003F20A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EC31BF2DE06003F20A6 /* main.m */; };
 		02701EC71BF2DE06003F20A6 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02701EC61BF2DE06003F20A6 /* AppDelegate.mm */; };
 		02701ECD1BF2DE06003F20A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02701ECB1BF2DE06003F20A6 /* Main.storyboard */; };
@@ -49,17 +49,19 @@
 		02701ED21BF2DE06003F20A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02701ED01BF2DE06003F20A6 /* LaunchScreen.storyboard */; };
 		02701EDD1BF2DE06003F20A6 /* FDYDDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EDC1BF2DE06003F20A6 /* FDYDDTests.m */; };
 		02701EE81BF2DE06003F20A6 /* FDYDDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EE71BF2DE06003F20A6 /* FDYDDUITests.m */; };
-		02701EF71BF2DE39003F20A6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EF61BF2DE39003F20A6 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02701EFC1BF2E070003F20A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EFB1BF2E070003F20A6 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02701EFF1BF2E084003F20A6 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EFE1BF2E084003F20A6 /* LoginView.m */; settings = {ASSET_TAGS = (); }; };
-		027CBE9E1BFD63DF003F3F07 /* AFNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 027CBE9D1BFD63DF003F3F07 /* AFNConnection.m */; settings = {ASSET_TAGS = (); }; };
-		02DC876E1C0C36B4007CDF39 /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87611C0C36B4007CDF39 /* aboutViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02DC876F1C0C36B4007CDF39 /* addressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87641C0C36B4007CDF39 /* addressViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02DC87701C0C36B4007CDF39 /* archiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87671C0C36B4007CDF39 /* archiveViewController.m */; settings = {ASSET_TAGS = (); }; };
-		02DC87711C0C36B4007CDF39 /* feedBackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC876A1C0C36B4007CDF39 /* feedBackController.m */; settings = {ASSET_TAGS = (); }; };
-		02DC87721C0C36B4007CDF39 /* myOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC876D1C0C36B4007CDF39 /* myOrderController.m */; settings = {ASSET_TAGS = (); }; };
-		02DC87751C0C3AAD007CDF39 /* myOrderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87741C0C3AAD007CDF39 /* myOrderTableView.m */; settings = {ASSET_TAGS = (); }; };
+		02701EF71BF2DE39003F20A6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EF61BF2DE39003F20A6 /* MainViewController.m */; };
+		02701EFC1BF2E070003F20A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EFB1BF2E070003F20A6 /* LoginViewController.m */; };
+		02701EFF1BF2E084003F20A6 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02701EFE1BF2E084003F20A6 /* LoginView.m */; };
+		027CBE9E1BFD63DF003F3F07 /* AFNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 027CBE9D1BFD63DF003F3F07 /* AFNConnection.m */; };
+		02DC876E1C0C36B4007CDF39 /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87611C0C36B4007CDF39 /* aboutViewController.m */; };
+		02DC876F1C0C36B4007CDF39 /* addressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87641C0C36B4007CDF39 /* addressViewController.m */; };
+		02DC87701C0C36B4007CDF39 /* archiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87671C0C36B4007CDF39 /* archiveViewController.m */; };
+		02DC87711C0C36B4007CDF39 /* feedBackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC876A1C0C36B4007CDF39 /* feedBackController.m */; };
+		02DC87721C0C36B4007CDF39 /* myOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC876D1C0C36B4007CDF39 /* myOrderController.m */; };
+		02DC87751C0C3AAD007CDF39 /* myOrderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DC87741C0C3AAD007CDF39 /* myOrderTableView.m */; };
 		194F457F3635FBA46D8943C6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2FDD3195F2F1BFEE601FA5 /* libPods.a */; };
+		3A1A32E91C1801B0003D0594 /* nameChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A32E81C1801B0003D0594 /* nameChangeViewController.m */; };
+		3A5798CC1C1662B9004050F6 /* personInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5798CB1C1662B9004050F6 /* personInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +171,10 @@
 		02DC87731C0C3AAD007CDF39 /* myOrderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myOrderTableView.h; sourceTree = "<group>"; };
 		02DC87741C0C3AAD007CDF39 /* myOrderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myOrderTableView.m; sourceTree = "<group>"; };
 		2B68992CA110CA653CA6629A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3A1A32E71C1801B0003D0594 /* nameChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nameChangeViewController.h; sourceTree = "<group>"; };
+		3A1A32E81C1801B0003D0594 /* nameChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nameChangeViewController.m; sourceTree = "<group>"; };
+		3A5798CA1C1662B9004050F6 /* personInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personInfoViewController.h; sourceTree = "<group>"; };
+		3A5798CB1C1662B9004050F6 /* personInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personInfoViewController.m; sourceTree = "<group>"; };
 		4D2FDD3195F2F1BFEE601FA5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1179E5C47F40D4854C005EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,6 +329,7 @@
 		02668D431C04563B0078610B /* myself */ = {
 			isa = PBXGroup;
 			children = (
+				3A5798C91C16628D004050F6 /* personInfoViewController */,
 				02671BCF1C080C2F000E0AAD /* accountViewController */,
 				02DC87621C0C36B4007CDF39 /* addressViewController */,
 				02DC876B1C0C36B4007CDF39 /* myOrderController */,
@@ -543,6 +550,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3A5798C91C16628D004050F6 /* personInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A5798CA1C1662B9004050F6 /* personInfoViewController.h */,
+				3A5798CB1C1662B9004050F6 /* personInfoViewController.m */,
+				3A1A32E71C1801B0003D0594 /* nameChangeViewController.h */,
+				3A1A32E81C1801B0003D0594 /* nameChangeViewController.m */,
+			);
+			path = personInfoViewController;
+			sourceTree = "<group>";
+		};
 		A80169B5020B0805CDC7EDED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,8 +756,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0240BE3A1C02AE350074445E /* TghosptlController.m in Sources */,
+				3A1A32E91C1801B0003D0594 /* nameChangeViewController.m in Sources */,
 				02DC876E1C0C36B4007CDF39 /* aboutViewController.m in Sources */,
 				02671BD51C080C2F000E0AAD /* myActTableView.m in Sources */,
+				3A5798CC1C1662B9004050F6 /* personInfoViewController.m in Sources */,
 				023ECA7D1C0EFAE300F68E75 /* RatView.m in Sources */,
 				02DC87751C0C3AAD007CDF39 /* myOrderTableView.m in Sources */,
 				023ECA7A1C0EEFFF00F68E75 /* TQStarRatingView.m in Sources */,
@@ -941,7 +961,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "--.FDYDD";
+				PRODUCT_BUNDLE_IDENTIFIER = "---.FDYDD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -986,7 +1006,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "--.FDYDD";
+				PRODUCT_BUNDLE_IDENTIFIER = "---.FDYDD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

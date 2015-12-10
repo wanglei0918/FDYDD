@@ -14,7 +14,7 @@
 #import "archiveViewController.h"
 #import "aboutViewController.h"
 #import "feedBackController.h"
-
+#import "personInfoViewController.h"
 
 @interface OwnInfoController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
@@ -28,7 +28,8 @@ NSString* filePath;
 @property(strong,nonatomic)UILabel *lblName;
 @property(strong,nonatomic)UILabel *lblphone;
 @property(strong,nonatomic)UIImageView *imgPHone;
-
+@property(strong,nonatomic)UIButton * nameBtn;
+@property(strong,nonatomic)UIButton * iphoneBtn;
 @end
 
 
@@ -102,6 +103,20 @@ NSString* filePath;
         make.bottom.equalTo(_headbtn).with.offset(FIXWIDTHORHEIGHT(35));
         make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(30)));
     }];
+    
+    
+    //头像下面的label盖一个透明的button
+    self.nameBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.view addSubview:self.nameBtn];
+    [self.nameBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(_headbtn).with.offset(FIXWIDTHORHEIGHT(65));/*35改成65*/
+        make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(60)));/*30改成60*/
+    }];
+    [self.nameBtn addTarget:self action:@selector(nameOrPhoneNumberBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+
+    
     //头像下方的imgV
     self.imgPHone = [[UIImageView alloc] init];
     [self.view addSubview:self.imgPHone];
@@ -120,6 +135,9 @@ NSString* filePath;
      self.lblphone.font = [UIFont systemFontOfSize:FIXWIDTHORHEIGHT(15)];
     self.lblphone.textColor = RGBCOLOR(200, 200, 200);
     [self.imgPHone addSubview:self.lblphone];
+    
+ 
+    
     
     
     int sizeXY = 60;
@@ -279,7 +297,13 @@ NSString* filePath;
     feedBackController *feedback = [[feedBackController alloc] init];
     [self.navigationController pushViewController:feedback animated:YES];
 }
-
+-(void)nameOrPhoneNumberBtnClicked{  //点击事件跳转到个人信息编辑界面
+    
+    NSLog(@"个人信息更改界面");
+    personInfoViewController * personInfo = [[personInfoViewController alloc]init];
+    personInfo.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self.navigationController pushViewController:personInfo animated:YES];
+}
 
 // UIActionSheet  点击按钮触发的方法
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex NS_DEPRECATED_IOS(2_0, 8_3)
