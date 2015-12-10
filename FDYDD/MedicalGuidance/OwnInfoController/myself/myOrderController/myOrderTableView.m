@@ -39,7 +39,7 @@
     [self addSubview:imgGray1];
     
   
-    self.lblTime = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(10), self.imgBase.top+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(150), FIXWIDTHORHEIGHT(25))];
+    self.lblTime = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(10), self.imgBase.top+FIXWIDTHORHEIGHT(3), FIXWIDTHORHEIGHT(150), FIXWIDTHORHEIGHT(25))];
     [self.imgBase addSubview:self.lblTime];
     [self.lblTime setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(12)]];
     self.lblTime.text = @"2015年9月22号 下午 13:30";

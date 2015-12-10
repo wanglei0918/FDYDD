@@ -29,7 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = RGBCOLOR(233, 233, 244);
+    [self.view endEditing:YES];
     //设置导航栏
     UILabel *Titlelbl = [[UILabel alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(180), FIXWIDTHORHEIGHT(20), FIXWIDTHORHEIGHT(80), FIXWIDTHORHEIGHT(30))];
     Titlelbl.textColor= RGBCOLOR(220, 10, 12);
@@ -133,12 +134,22 @@
 //按钮选择医院进入下一页面
 -(void)TghosptilAtion
 {
+    //居然每个页面都要取消一下第一响应者
+    [self.orderview.txtfdContact resignFirstResponder];
+    [self.orderview.txtfdPatient resignFirstResponder];
+    [self.orderview.txtfdPhone resignFirstResponder];
+
     TghosptlController *targetHospital = [[TghosptlController alloc] init];
     [self.navigationController pushViewController:targetHospital animated:YES];
 }
 //设置时间选择器的按钮
 -(void)showTimebtn
 {
+    //居然每个页面都要取消一下第一响应者
+    [self.orderview.txtfdContact resignFirstResponder];
+    [self.orderview.txtfdPatient resignFirstResponder];
+    [self.orderview.txtfdPhone resignFirstResponder];
+    
     DatePickView *datepick = [[DatePickView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     datepick.delegate = self;
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
@@ -154,6 +165,10 @@
 //备注说明的按钮
 -(void)remarkbtn
 {
+    //居然每个页面都要取消一下第一响应者
+    [self.orderview.txtfdContact resignFirstResponder];
+    [self.orderview.txtfdPatient resignFirstResponder];
+    [self.orderview.txtfdPhone resignFirstResponder];
     
     //黑色背景
     self.btnBack = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.orderview.frame.size.width, self.orderview.frame.size.height)];
@@ -200,9 +215,10 @@
 {
     //在这里呼出下方菜单按钮项
     typeActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles: @"普通（100元/小时）", @"专业（150元/小时）",@"VIP（200元/小时）", nil];
-    
     [typeActionSheet showInView:self.orderview];
-    NSLog(@"服务类型");
+    [self.orderview.txtfdContact resignFirstResponder];
+    [self.orderview.txtfdPatient resignFirstResponder];
+    [self.orderview.txtfdPhone resignFirstResponder];
 }
 // UIActionSheet  点击按钮触发的方法
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex NS_DEPRECATED_IOS(2_0, 8_3)
@@ -270,7 +286,6 @@
 -(void)rightbutton
 {
     ServeInstrutionController *serveInstrution = [[ServeInstrutionController alloc] init];
-   
     [self.navigationController presentViewController:serveInstrution animated:YES completion:^{
         
     }];
@@ -283,11 +298,6 @@
     [self.orderview.txtfdPhone resignFirstResponder];
     return YES;
 }
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {

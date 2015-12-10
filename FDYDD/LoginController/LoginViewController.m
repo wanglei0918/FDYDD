@@ -10,7 +10,8 @@
 #import "TipView.h"
 
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
+
 
 @end
 
@@ -35,9 +36,10 @@
     self.loginView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.loginView];
     
-    UITapGestureRecognizer *returnKey = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHiden)];
-    returnKey.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:returnKey];
+
+//    UITapGestureRecognizer *returnKey = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHiden)];
+//    returnKey.cancelsTouchesInView = NO;
+//    [self.view addGestureRecognizer:returnKey];
     
     
     //设置手机号底层UIImageView
@@ -71,6 +73,7 @@
         make.edges.equalTo(self.userImageV).insets(UIEdgeInsetsMake(0, 50*WIDTH, 0, 0));
     }];
     self.userText.placeholder = @"请输入手机号";
+    self.userText.delegate =self;
     self.userText.userInteractionEnabled = YES;
     self.userText.keyboardType = UIKeyboardTypePhonePad;
     
@@ -181,32 +184,57 @@
     
 }
 
+
+
+
 -(void)idcodeButton
 {
     NSLog(@"获取验证码");
     //使用正则表达式判断手机号码
-    //[self checkTel:self.userText.text];
-//        NSString *string = @"http://192.168.31.134:8080/bdys-app/ping/json";
+    
+    [self checkTel:self.userText.text];
+        NSString *string = @"http://192.168.31.134:8080/bdys-app/account/verificationcode/getcode";
 
-        //body体内是对象类型（id）
-//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.userText.text forKey:@"phone"];
-//        [AFNConnection PostDataUrl:string body:dictionary block:^(id backData) {
-//            
-//            NSLog(@"success:%@",backData);
-//            id temp = [backData objectForKey:@"Msg"];
-//            NSLog(@"%@",temp);
-//            
-//        } error:^(NSError *error) {
-//            NSLog(@"error:%@",error);
-//        }];
+    //    body体内是对象类型（id）
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.userText.text forKey:@"phone"];
+        [AFNConnection PostDataUrl:string body:dictionary block:^(id backData) {
+            
+            NSLog(@"success:%@",backData);
+            id temp = [backData objectForKey:@"Msg"];
+            NSLog(@"%@",temp);
+            
+        } error:^(NSError *error) {
+            NSLog(@"error:%@",error);
+        }];
     
 }
+
+
 
 -(void)timerAction
 {
      NSLog(@"登录");
     MainMapViewController *mainVC = [[MainMapViewController alloc] init];
     [self.navigationController pushViewController:mainVC animated:YES];
+    
+    
+     NSString *string = @"http://192.168.31.134:8080/bdys-app/account/user/login";
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:self.userText.text,@"phone",self.idcodeText.text,@"verifycode", nil];
+    [AFNConnection PostDataUrl:string body:dictionary block:^(id backData) {
+        
+        NSLog(@"success:%@",backData);
+//        id temp = [backData objectForKey:@"Msg"];
+//        NSLog(@"%@",temp);
+        
+    } error:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
+
+    
+    
+    
+    
 }
 //手势获取用户协议
 -(void)tapGesture:(UITapGestureRecognizer*)tap
@@ -230,7 +258,7 @@
         [alert show];
         return NO;
     }
-      NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
+      NSString *regex = @"^((13[0-9])|(147)|(177)|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
     
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     

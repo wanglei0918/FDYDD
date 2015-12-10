@@ -47,7 +47,7 @@
  //   self.lblTime.backgroundColor = [UIColor yellowColor];
     
     
-    self.lblSertype = [[UILabel alloc] initWithFrame:CGRectMake(self.lblConsume.left, self.lblTime.bottom, FIXWIDTHORHEIGHT(70), FIXWIDTHORHEIGHT(30))];
+    self.lblSertype = [[UILabel alloc] initWithFrame:CGRectMake(self.lblConsume.left, self.lblTime.bottom, FIXWIDTHORHEIGHT(70), FIXWIDTHORHEIGHT(25))];
     [self addSubview:self.lblSertype];
     [self.lblSertype setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)]];
     self.lblSertype.text = @"服务类型:";
@@ -61,7 +61,7 @@
     [self.lblType setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(13)]];
     
 
-    self.lblSum = [[UILabel alloc] initWithFrame:CGRectMake(self.lblTime.left+FIXWIDTHORHEIGHT(20), self.lblSertype.top, FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(30))];
+    self.lblSum = [[UILabel alloc] initWithFrame:CGRectMake(self.lblTime.left+FIXWIDTHORHEIGHT(20), self.lblSertype.top, FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(25))];
     [self addSubview:self.lblSum];
     self.lblSum.right = self.lblTime.right;
     self.lblSum.text = @"-300.00";

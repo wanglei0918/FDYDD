@@ -17,16 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = RGBCOLOR(235, 235, 244);
 
     UILabel *lbltitle = [[UILabel alloc] init];
     [self.view addSubview:lbltitle];
     [lbltitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view).with.offset(FIXWIDTHORHEIGHT(20));
+        make.top.equalTo(self.view).with.offset(FIXWIDTHORHEIGHT(25));
         make.size.mas_equalTo(CGSizeMake(FIXWIDTHORHEIGHT(100), FIXWIDTHORHEIGHT(30)));
     }];
     lbltitle.text = @"意见反馈";
+    [lbltitle setFont:[UIFont systemFontOfSize:FIXWIDTHORHEIGHT(15)]];
     lbltitle.textAlignment = NSTextAlignmentCenter;
     lbltitle.textColor = RGBCOLOR(216, 65, 72);
 
@@ -35,7 +36,7 @@
 }
 -(void)UIinterface
 {
-//意见反馈下的第一个base图
+   //意见反馈下的第一个base图
     UIImageView *imgvwHelp = [[UIImageView alloc] initWithFrame:CGRectMake(FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(60), FIXWIDTHORHEIGHT(320)-FIXWIDTHORHEIGHT(10), FIXWIDTHORHEIGHT(80))];
     imgvwHelp.image = [UIImage imageNamed:@"bg-1"];
     [self.view addSubview:imgvwHelp];
@@ -76,7 +77,7 @@
     [imgvwHelp addSubview:imgphone];
     imgphone.image = [UIImage imageNamed:@"call1"];
     
-    
+
     
     //意见反馈下的第一个base图
     UIImageView *imgopinion = [[UIImageView alloc] initWithFrame:CGRectMake(0, imgvwHelp.bottom+FIXWIDTHORHEIGHT(5), FIXWIDTHORHEIGHT(320), FIXWIDTHORHEIGHT(240))];
@@ -110,7 +111,7 @@
     
     self.lblContent = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, FIXWIDTHORHEIGHT(290), FIXWIDTHORHEIGHT(25))];
     [self.textContent addSubview:self.lblContent];
-    self.lblContent.text = @"  请输入您反馈内容";
+    self.lblContent.text = @"  请输入您的反馈内容";
     self.lblContent.enabled = NO;
     self.lblContent.textColor = RGBCOLOR(131, 132, 133);
     self.lblContent.backgroundColor = [UIColor clearColor];
@@ -162,12 +163,12 @@
 
 
 
-//
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//    [self.navigationController popViewControllerAnimated:YES];
-//    NSLog(@"0123");
-//}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"0123");
+}
 
 
 - (void)didReceiveMemoryWarning {
